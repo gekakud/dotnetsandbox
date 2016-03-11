@@ -2,28 +2,28 @@
 
 namespace ConsoleApplication1
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //Dependency injection (Simple way)
-            Run programExcuter = new Run(new StringDataProvider());
+            var programExcuter = new RetreiveData(new StringDataProvider());
 
-            Run diffrentExe = new Run(new DataBaseDataProvider());
+            var diffrentExe = new RetreiveData(new DataBaseDataProvider());
 
             Console.ReadKey();
         }
     }
 
-    public class Run
+    public class RetreiveData
     {
         private readonly IData _data;
 
-        public Run(IData p_data)
+        public RetreiveData(IData p_data)
         {
             _data = p_data;
             _data.GetData();
             _data.SaveData();
         }
-    } 
+    }
 }

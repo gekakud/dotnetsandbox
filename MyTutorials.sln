@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "Extensi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionInterfaces", "CollectionInterfaces\CollectionInterfaces.csproj", "{649C3A1D-62C7-4A31-9DAE-AA705F8E9CB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Singleton\Singleton.csproj", "{244060FC-7049-4491-9C07-439F4B82AEB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{649C3A1D-62C7-4A31-9DAE-AA705F8E9CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{649C3A1D-62C7-4A31-9DAE-AA705F8E9CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{649C3A1D-62C7-4A31-9DAE-AA705F8E9CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{244060FC-7049-4491-9C07-439F4B82AEB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{244060FC-7049-4491-9C07-439F4B82AEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{244060FC-7049-4491-9C07-439F4B82AEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{244060FC-7049-4491-9C07-439F4B82AEB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
