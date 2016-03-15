@@ -1,76 +1,41 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace CollectionInterfaces
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            MailService mailServ = new MailService();
+            var t = ConfigurationManager.AppSettings.Get("1");
+            Console.WriteLine(t);
 
-            List<UserAccount> usersList = UsersGenerator.GenerateUserAccounts();
-            Dictionary<int, UserAccount> usersDict= usersList.ToDictionary(x => x.AccountId);
-            HashSet<UserAccount> usersHashSet = new HashSet<UserAccount>(usersList);
-            usersHashSet.Add(usersList.First());
-            
+            var mailServ = new MailService();
+            var usersList = UsersGenerator.GenerateUserAccounts();
+            UsersDB db = new UsersDB(usersList);
+            var usersDict = usersList.ToDictionary(x => x.AccountId);
+            var usersHashSet = new HashSet<UserAccount>(usersList);
+
             // we can pass any object that implements ICollection or IEnumerable interface,
             // but not IList, since the Dictionary does not implement IList
-            // see the picture in this project foldel
+            // see the picture in this project folder
             mailServ.SendEmailsToUsers(usersList);
             mailServ.SendEmailsToUsers(usersDict.Values);
             mailServ.SendEmailsToUsers(usersHashSet);
 
+            Console.WriteLine("Retrieving all accounts from DB...");
+            //it does not matter how we get our users from a db class
+            //whenever we get List or Dict.  these both are OK, since
+            //implementing IEnumerable interface
+            IEnumerable<UserAccount> someEnumerable = db.RetrieveAccountsDictionary("any type").Values;
+
+            //cast IEnumerable to ICollection
+            mailServ.SendEmailsToUsers((ICollection<UserAccount>)someEnumerable);
+
             Console.ReadKey();
         }
-    }
-
-    class MailService
-    {
-        //ICollection and INumerable are OK for all
-        //IDictionary wiil work for usersDict only
-        //IList will work for usersList
-        public void SendEmailsToUsers(ICollection<UserAccount> userAccounts)
-        {
-            Console.WriteLine(userAccounts.GetType()+"\n");
-            foreach (var userAccount in userAccounts)
-            {
-                Console.WriteLine("sent to "+userAccount.Email);
-            }
-        }
-    }
-
-    class UsersGenerator
-    {
-        public static List<UserAccount> GenerateUserAccounts()
-        {
-            var newList = new List<UserAccount>();
-            for (int i = 0; i < 4; i++)
-            {
-                newList.Add(new UserAccount
-                {
-                    AccountId = i,
-                    Email = "user" + i + "@my.com",
-                    FirstName = "Bla",
-                    LastName = "Bla"
-                });
-            }
-            return newList;
-        }
-    }
-
-    class UserAccount:Human
-    {
-        public int AccountId { get; set; }
-        public string Email { get; set; }
-    }
-
-    class Human
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
     }
 }
