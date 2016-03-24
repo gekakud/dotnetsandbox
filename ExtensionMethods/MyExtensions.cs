@@ -4,9 +4,9 @@ namespace ExtensionMethods
 {
     internal class MyExtCheck
     {
-        public MyExtCheck(string stringForCheck)
+        public MyExtCheck(string p_stringForCheck)
         {
-            SomeString = stringForCheck;
+            SomeString = p_stringForCheck;
             ShowOriginalValue();
             ApplyMyExtension();
         }
@@ -29,9 +29,9 @@ namespace ExtensionMethods
 
     public static class MyStringExtension
     {
-        public static int GetNumberOfSpaces(this string stringToApllyOn)
+        public static int GetNumberOfSpaces(this string p_stringToApllyOn)
         {
-            var splitStrings = stringToApllyOn.Split(' ');
+            var splitStrings = p_stringToApllyOn.Split(' ');
             return splitStrings.Length - 1;
         }
     }
