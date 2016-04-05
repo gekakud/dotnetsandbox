@@ -2,21 +2,25 @@
 
 namespace ThreadAndTaskTutorial
 { 
-    class Program
+    public class Program
     {
         private const int NumOfJobs = 10;
 
         static void Main()
         {
-            ThreadsExecutor jeExecutor = new ThreadsExecutor(NumOfJobs);
+            StartJobs(NumOfJobs);
+        }
+
+        public static void StartJobs(int p_numOfJobs)
+        {
+            ThreadsExecutor jeExecutor = new ThreadsExecutor(p_numOfJobs);
             jeExecutor.StartJobs();
 
-            TasksExecutor teExecutor = new TasksExecutor(NumOfJobs);
+            TasksExecutor teExecutor = new TasksExecutor(p_numOfJobs);
             teExecutor.StartJobs();
 
             Console.ReadKey();
         }
-
         
     }
 }

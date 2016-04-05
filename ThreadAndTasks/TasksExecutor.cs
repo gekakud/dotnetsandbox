@@ -31,14 +31,12 @@ namespace ThreadAndTaskTutorial
             foreach (var t in tasksList)
             {
                 t.Start();
-                
             }
         }
 
         private int JobToExecute()
         {
             // job to do
-            
             Console.WriteLine("task id is: {0}", Task.CurrentId);
             return 5;
         }

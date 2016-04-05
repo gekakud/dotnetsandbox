@@ -1,16 +1,16 @@
 ﻿using System;
 
-namespace Singleton
+namespace MySingleton
 {
-    internal class Program
+    public class Program
     {
         private static void Main(string[] args)
         {
-            //here we try to create two instances of Singleton class, but as we expect
-            //the Singleton class handle only one. s and s1 are same objects!!!
+            //here we try to create two instances of MySingletonClass class, but as we expect
+            //the MySingletonClass class handle only one. s and s1 are same objects!!!
 
-            var s = Singleton.Instance;
-            var s1 = Singleton.Instance;
+            var s = MySingletonClass.Instance;
+            var s1 = MySingletonClass.Instance;
             if (s == s1)
             {
                 Console.WriteLine("same shit");
@@ -24,18 +24,18 @@ namespace Singleton
         }
     }
 
-    internal class Singleton
+    public class MySingletonClass
     {
         //static is a thread-safe @JohnSkeet
-        private static readonly Singleton instance = new Singleton();
+        private static readonly MySingletonClass instance = new MySingletonClass();
 
-        private Singleton()
+        private MySingletonClass()
         {
             //do some init stuff here
             Console.WriteLine("In singleton ctor");
         }
 
-        public static Singleton Instance
+        public static MySingletonClass Instance
         {
             get { return instance; }
         }

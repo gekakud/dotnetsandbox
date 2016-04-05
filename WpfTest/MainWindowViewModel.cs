@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using Microsoft.TeamFoundation.MVVM;
+using GalaSoft.MvvmLight.Command;
+
 using WpfTest.Annotations;
 using WpfTest.Data;
 
