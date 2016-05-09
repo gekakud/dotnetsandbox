@@ -19,6 +19,8 @@ namespace ThreadAndTaskTutorial
             TasksExecutor teExecutor = new TasksExecutor(p_numOfJobs);
             teExecutor.StartJobs();
 
+
+            teExecutor.ShowResults();
             Console.ReadKey();
         }
         
