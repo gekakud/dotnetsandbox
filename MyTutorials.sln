@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericTypes", "GenericTypes\GenericTypes.csproj", "{5CF8BD5F-D7ED-4506-BB66-3DB5CE289C57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadAndTaskTutorial", "ThreadAndTasks\ThreadAndTaskTutorial.csproj", "{B6C94842-8801-446B-AF97-518E39204BF0}"
@@ -22,6 +20,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ", "LINQ\LINQ.csproj", "{E955B060-3421-487E-847C-40119FCE3F3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{5E26A7BA-E770-44E7-A9AC-735E89D5667B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryGame", "MemoryGame\MemoryGame.csproj", "{1D350725-3BC0-456D-AAA7-2F8D043EF53A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{A2EB06A0-91DB-457B-ADDC-C0BCBA202C00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,14 @@ Global
 		{5E26A7BA-E770-44E7-A9AC-735E89D5667B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E26A7BA-E770-44E7-A9AC-735E89D5667B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E26A7BA-E770-44E7-A9AC-735E89D5667B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D350725-3BC0-456D-AAA7-2F8D043EF53A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D350725-3BC0-456D-AAA7-2F8D043EF53A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D350725-3BC0-456D-AAA7-2F8D043EF53A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D350725-3BC0-456D-AAA7-2F8D043EF53A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2EB06A0-91DB-457B-ADDC-C0BCBA202C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2EB06A0-91DB-457B-ADDC-C0BCBA202C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2EB06A0-91DB-457B-ADDC-C0BCBA202C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2EB06A0-91DB-457B-ADDC-C0BCBA202C00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

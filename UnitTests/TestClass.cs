@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using NUnit.Framework;
-using Shouldly;
 
 namespace UnitTests
 {
@@ -16,7 +15,7 @@ namespace UnitTests
         }
 
         [Test, TestCaseSource(typeof (TestsFactory), "TestCase")]
-        public void RunSingletonTest(TestObjectInstance p_objectToTest)
+        public void RunTest(TestObjectInstance p_objectToTest)
         {
             
         }
