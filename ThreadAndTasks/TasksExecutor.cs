@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ThreadAndTaskTutorial
@@ -9,20 +10,19 @@ namespace ThreadAndTaskTutorial
     class TasksExecutor:IExecutor
     {
         private int NumOfJobs { get; set; }
-        List<Task> tasksList = new List<Task>();
-        private List<int> resultList = new List<int>();
+        readonly List<Task<int>> tasksList = new List<Task<int>>();
+        private List<int> _resultList = new List<int>();
 
-        public TasksExecutor(int num)
+        public TasksExecutor(int p_num)
         {
-            if (num <= 0)
+            if (p_num <= 0)
                 throw new ArgumentOutOfRangeException();
 
-            NumOfJobs = num;
+            NumOfJobs = p_num;
 
-            for (int i = 0; i < NumOfJobs; i++)
+            for (var i = 0; i < NumOfJobs; i++)
             {
                 tasksList.Add(new Task<int>(JobToExecute));
-                //resultList.Add(Task.Factory.StartNew());
             }
         }
 
@@ -31,6 +31,15 @@ namespace ThreadAndTaskTutorial
             foreach (var t in tasksList)
             {
                 t.Start();
+                _resultList.Add(t.Result);
+            }
+        }
+
+        public void ShowResults()
+        {
+            foreach (var result in _resultList)
+            {
+                Console.WriteLine(result.ToString());
             }
         }
 
@@ -38,8 +47,10 @@ namespace ThreadAndTaskTutorial
         {
             // job to do
             Console.WriteLine("task id is: {0}", Task.CurrentId);
-            return 5;
-        }
+            Thread.Sleep(10);
+            if (Task.CurrentId != null) return Task.CurrentId.Value;
 
+            return -1;
+        }
     }
 }
