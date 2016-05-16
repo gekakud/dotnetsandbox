@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericTypes", "GenericTypes\GenericTypes.csproj", "{5CF8BD5F-D7ED-4506-BB66-3DB5CE289C57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadAndTaskTutorial", "ThreadAndTasks\ThreadAndTaskTutorial.csproj", "{B6C94842-8801-446B-AF97-518E39204BF0}"
@@ -24,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryGame", "MemoryGame\MemoryGame.csproj", "{1D350725-3BC0-456D-AAA7-2F8D043EF53A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{A2EB06A0-91DB-457B-ADDC-C0BCBA202C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OoDb", "OoDb\OoDb.csproj", "{5E6BEA11-C3D1-4BDF-A954-D037D179B9B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +83,10 @@ Global
 		{A2EB06A0-91DB-457B-ADDC-C0BCBA202C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2EB06A0-91DB-457B-ADDC-C0BCBA202C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2EB06A0-91DB-457B-ADDC-C0BCBA202C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E6BEA11-C3D1-4BDF-A954-D037D179B9B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E6BEA11-C3D1-4BDF-A954-D037D179B9B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E6BEA11-C3D1-4BDF-A954-D037D179B9B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E6BEA11-C3D1-4BDF-A954-D037D179B9B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
