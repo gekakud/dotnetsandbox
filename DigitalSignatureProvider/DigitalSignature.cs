@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DigitalSignatureProvider
 {
@@ -32,7 +28,7 @@ namespace DigitalSignatureProvider
             File.WriteAllBytes(new_path, p_hashedDocument);
         }
 
-        public bool VerifySignedDocument(byte[] hashedDocument, byte[] signature)
+        public bool VerifySignedDocument(byte[] p_hashedDocument, byte[] p_signature)
         {
             using (var rsa = new RSACryptoServiceProvider(2048))
             {
@@ -41,7 +37,7 @@ namespace DigitalSignatureProvider
                 var rsaDeformatter = new RSAPKCS1SignatureDeformatter(rsa);
                 rsaDeformatter.SetHashAlgorithm("SHA256");
 
-                return rsaDeformatter.VerifySignature(hashedDocument, signature);
+                return rsaDeformatter.VerifySignature(p_hashedDocument, p_signature);
             }
         }   
 
@@ -55,7 +51,7 @@ namespace DigitalSignatureProvider
             }
         }
 
-        private byte[] SignHashedDocument(byte[] hashOfDataToSign)
+        private byte[] SignHashedDocument(byte[] p_hashOfDataToSign)
         {
             using (var rsa = new RSACryptoServiceProvider(2048))
             {
@@ -65,7 +61,7 @@ namespace DigitalSignatureProvider
                 var rsaFormatter = new RSAPKCS1SignatureFormatter(rsa);
                 rsaFormatter.SetHashAlgorithm("SHA256");
 
-                return rsaFormatter.CreateSignature(hashOfDataToSign);
+                return rsaFormatter.CreateSignature(p_hashOfDataToSign);
             }
         }
 
