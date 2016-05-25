@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BuilderPattern.Builders;
 
 namespace BuilderPattern
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             //like in Strategy pattern, we want to build specific object(sandwich)
             //there are two types of sandwiches our store has

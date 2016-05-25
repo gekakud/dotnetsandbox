@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using BuilderPattern.Builders;
 
-namespace BuilderPattern
+namespace BuilderPattern.Builders
 {
     public class MySandwichBuilder : SandwichBuilder
     {

@@ -4,7 +4,7 @@ namespace ExtensionMethods
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             //For method extension the following is required:
             //1. new static class and static method
