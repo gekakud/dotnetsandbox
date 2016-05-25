@@ -22,8 +22,8 @@ namespace ConsoleApplication1
         public RetreiveData(IData p_data)
         {
             _data = p_data;
-            _data.GetData();
             _data.SaveData();
+            _data.GetData();     
         }
     }
 }
