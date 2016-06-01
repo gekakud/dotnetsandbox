@@ -29,20 +29,20 @@ namespace StrategyPattern
             
             cardList.Add(new CreditCard(CardType.Visa)
             {
-                Cvv = 234,Name = "Vasya",Number = 458001124422
+                Cvv = 234,Name = "Vasiliy",Number = 458001124422
             });
 
             cardList.Add(new CreditCard(CardType.Visa)
             {
                 Cvv = 234,
-                Name = "Kolya",
+                Name = "Moshe",
                 Number = 418001124422
             });
 
             cardList.Add(new CreditCard(CardType.MasterCard)
             {
                 Cvv = 231,
-                Name = "Petya",
+                Name = "Kobi",
                 Number = 314021111229
             });
 

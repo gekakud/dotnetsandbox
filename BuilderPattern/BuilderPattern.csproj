@@ -48,7 +48,7 @@
     <Compile Include="Sandwich.cs" />
     <Compile Include="Builders\SandwichBuilder.cs" />
     <Compile Include="SandwichMaker.cs" />
-    <Compile Include="SuperSandwich.cs" />
+    <Compile Include="Builders\SuperSandwich.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

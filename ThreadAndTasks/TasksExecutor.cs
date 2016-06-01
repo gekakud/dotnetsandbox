@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -47,7 +45,7 @@ namespace ThreadAndTaskTutorial
         {
             // job to do
             Console.WriteLine("task id is: {0}", Task.CurrentId);
-            Thread.Sleep(10);
+            Thread.Sleep(300);
             if (Task.CurrentId != null) return Task.CurrentId.Value;
 
             return -1;
