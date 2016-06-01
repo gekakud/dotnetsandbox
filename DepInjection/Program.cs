@@ -7,23 +7,37 @@ namespace ConsoleApplication1
         private static void Main(string[] args)
         {
             //Dependency injection (Simple way)
-            var programExcuter = new RetreiveData(new StringDataProvider());
+            var _resolver = new Resolver();
 
-            var diffrentExe = new RetreiveData(new DataBaseDataProvider());
+            var d1 = new RetreiveData(_resolver.ResolveProvider());
+            var d2 = new RetreiveData(_resolver.ResolveProvider());
 
             Console.ReadKey();
         }
     }
 
+    public class Resolver
+    {
+        //all business logic is here
+
+        public IData ResolveProvider()
+        {
+            if (new Random().Next(2) == 1)
+            {
+                return new StringDataProvider();
+            }
+
+            return new DataBaseDataProvider();
+        }
+    }
+
     public class RetreiveData
     {
-        private readonly IData _data;
-
         public RetreiveData(IData p_data)
         {
-            _data = p_data;
-            _data.SaveData();
-            _data.GetData();     
+            var data = p_data;
+            data.SaveData();
+            data.GetData();
         }
     }
 }

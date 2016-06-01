@@ -10,9 +10,6 @@ namespace CollectionInterfaces
     {
         private static void Main(string[] args)
         {
-            var t = ConfigurationManager.AppSettings.Get("1");
-            Console.WriteLine(t);
-
             var mailServ = new MailService();
             var usersList = UsersGenerator.GenerateUserAccounts();
             UsersDB db = new UsersDB(usersList);

@@ -16,7 +16,6 @@ namespace BuilderPattern
 
         public void BuildSandwich()
         {
-
             builder.CreateNewSandwich();
             builder.PrepareBread();
             builder.ApplyMeatAndCheese();
