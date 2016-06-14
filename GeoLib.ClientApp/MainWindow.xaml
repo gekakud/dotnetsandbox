@@ -1,0 +1,19 @@
+﻿<Window x:Class="GeoLib.ClientApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:clientApp="clr-namespace:GeoLib.ClientApp"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <clientApp:WindowViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Label Content="Zip code:" HorizontalAlignment="Left" Margin="20,18,0,0" VerticalAlignment="Top" Height="30"/>
+        <TextBox HorizontalAlignment="Left" Margin="82,22,0,0" TextWrapping="Wrap" Text="{Binding ZipCode}" VerticalAlignment="Top" Height="18" Width="144" RenderTransformOrigin="0.419,1.448"/>
+        <Button Content="Find" HorizontalAlignment="Left" Margin="262,22,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.207,5.452" Command="{Binding FindCityByZipButtonClicked}"/>
+        <Label Content="City:" HorizontalAlignment="Left" Margin="20,71,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="82,77,0,0" TextWrapping="Wrap" Text="{Binding City}" VerticalAlignment="Top" Height="18" Width="144"/>
+        <Label Content="Country:" HorizontalAlignment="Left" Margin="20,122,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="82,130,0,0" TextWrapping="Wrap" Text="{Binding Country}" VerticalAlignment="Top" Width="144"/>
+    </Grid>
+</Window>

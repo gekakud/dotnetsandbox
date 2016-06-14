@@ -20,6 +20,7 @@ namespace GeoLib.Services
 
         public GeoData GetGeoData(string p_zipCode)
         {
+            //for testing purposes
             var provider = DataRepoTest ?? new DataRepository();
             return new GeoData
             {
@@ -31,7 +32,11 @@ namespace GeoLib.Services
 
         public IEnumerable<GeoData> GetDataInRange(string p_zipCode, int p_range)
         {
-            throw new NotImplementedException();
+            List<GeoData> listOfDummyData;
+
+            listOfDummyData = new List<GeoData>();
+
+            return listOfDummyData;
         }
     }
 }
