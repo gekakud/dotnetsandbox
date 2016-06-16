@@ -76,6 +76,7 @@
     </ApplicationDefinition>
     <Compile Include="DataModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="StatusResolver.cs" />
     <Compile Include="WindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

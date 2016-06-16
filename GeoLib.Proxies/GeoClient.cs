@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ServiceModel;
 using GeoLib.Contracts;
 
 namespace GeoLib.Proxies
 {
-    public class GeoClient : ClientBase<IGeoService>,IGeoService
+    public class GeoClient : ClientBase<IGeoService>,IGeoService,IDataProvider
     {
         public GeoData GetGeoData(string p_zipCode)
         {

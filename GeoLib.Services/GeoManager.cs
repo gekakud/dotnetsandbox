@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GeoLib.Contracts;
 using GeoLib.DataProvider;
 
@@ -8,15 +7,6 @@ namespace GeoLib.Services
     public class GeoManager : IGeoService
     {
         public DataRepository DataRepoTest;
-
-        public GeoManager()
-        {
-        }
-
-        public GeoManager(DataRepository p_repository)
-        {
-            DataRepoTest = p_repository;
-        }
 
         public GeoData GetGeoData(string p_zipCode)
         {
@@ -38,5 +28,18 @@ namespace GeoLib.Services
 
             return listOfDummyData;
         }
+
+        #region ctor
+
+        public GeoManager()
+        {
+        }
+
+        public GeoManager(DataRepository p_repository)
+        {
+            DataRepoTest = p_repository;
+        }
+
+        #endregion
     }
 }

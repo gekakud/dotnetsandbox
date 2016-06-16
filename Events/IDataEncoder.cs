@@ -1,9 +1,7 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace Events
+﻿namespace Events
 {
-    interface IDataEncoder
+    internal interface IDataEncoder
     {
-        void EncodeData(DataFile data);
+        void EncodeData(DataFile p_data);
     }
 }

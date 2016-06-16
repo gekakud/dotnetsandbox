@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
+using System.Data;
 using System.Runtime.CompilerServices;
+using System.ServiceModel;
 using GalaSoft.MvvmLight.Command;
 using GeoLib.ClientApp.Annotations;
 
@@ -10,8 +12,15 @@ namespace GeoLib.ClientApp
         private string _zipCode;
         private string _city;
         private string _country;
+        private bool _status;
 
         private readonly DataModel dataProvider;
+
+        public string ConnectionStatus
+        {
+            get { return @"C:\Users\EvgenyK\Desktop\dotnettutors\GeoLib.ClientApp\Resources\down.png"; }
+            
+        }
 
         public string ZipCode
         {
@@ -44,8 +53,8 @@ namespace GeoLib.ClientApp
         }
 
         public WindowViewModel()
-        {
-            dataProvider = DataModel.Instance;
+        {            
+            dataProvider = DataModel.Instance;           
             
             FindCityByZipButtonClicked = new RelayCommand(FindCityByZipButtonClickedInternal);
         }

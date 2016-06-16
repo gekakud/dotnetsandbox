@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataFile.cs" />
     <Compile Include="Encoder.cs" />
     <Compile Include="IDataEncoder.cs" />
     <Compile Include="Program.cs" />

@@ -13,9 +13,9 @@ namespace Events
 
         public event VideoEncodedEventHandler VideoEncoded;
 
-        public void EncodeData(DataFile data)
+        public void EncodeData(DataFile p_data)
         {
-            Console.WriteLine("VideoEncoder: Start encoding " + data.Title + data.Extension);
+            Console.WriteLine("VideoEncoder: Start encoding " + p_data.Title + p_data.Extension);
 
             var job = new Thread(() =>
             {
@@ -43,11 +43,11 @@ namespace Events
 
         public event AudioEncodedEventHandler AudioEncoded;
 
-        public void EncodeData(DataFile data)
+        public void EncodeData(DataFile p_data)
         {
             var job = new Thread(() =>
             {
-                Console.WriteLine("AudioEncoder: Start encoding " + data.Title + data.Extension);
+                Console.WriteLine("AudioEncoder: Start encoding " + p_data.Title + p_data.Extension);
                 Thread.Sleep(3000);
                 AudioEncodingCompleted();
             });
