@@ -11,5 +11,8 @@ namespace GeoLib.Contracts
 
         [OperationContract]
         IEnumerable<GeoData> GetDataInRange(string p_zipCode, int p_range);
+
+        [OperationContract]
+        GeoData Ping();
     }
 }

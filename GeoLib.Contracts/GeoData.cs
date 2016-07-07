@@ -13,5 +13,8 @@ namespace GeoLib.Contracts
 
         [DataMember]
         public string Country { get; set; }
+
+        [DataMember]
+        public int Status { get; set; }
     }
 }

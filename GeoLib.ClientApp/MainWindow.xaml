@@ -16,5 +16,6 @@
         <Label Content="Country:" HorizontalAlignment="Left" Margin="20,122,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="18" Margin="82,130,0,0" TextWrapping="Wrap" Text="{Binding Country}" VerticalAlignment="Top" Width="144"/>
         <Image HorizontalAlignment="Left" Height="25" Margin="483,10,0,0" VerticalAlignment="Top" Width="25" Source="{Binding ConnectionStatus}"/>
+        <Button Content="Reconnect" HorizontalAlignment="Left" Margin="433,71,0,0" VerticalAlignment="Top" Width="75"  Command="{Binding ReconnectButtonClicked}"/>
     </Grid>
 </Window>

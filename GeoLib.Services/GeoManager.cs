@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using GeoLib.Contracts;
 using GeoLib.DataProvider;
 
@@ -27,6 +28,12 @@ namespace GeoLib.Services
             listOfDummyData = new List<GeoData>();
 
             return listOfDummyData;
+        }
+
+        public GeoData Ping()
+        {
+            Console.WriteLine("ping back");
+            return new GeoData{Status = 1};
         }
 
         #region ctor

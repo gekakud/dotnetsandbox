@@ -1,4 +1,5 @@
 ﻿using System;
+using GeoLib.Contracts;
 using GeoLib.Proxies;
 
 namespace GeoLib.ClientApp
@@ -12,7 +13,7 @@ namespace GeoLib.ClientApp
         private static DataModel s_dataModelInstance;
 
         public IDataProvider AnotherDummyDataProvider;
-        public IDataProvider GeoServiceDataProvider;
+        public IGeoService GeoServiceDataProvider;
 
         private DataModel()
         {
