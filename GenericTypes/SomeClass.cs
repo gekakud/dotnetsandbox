@@ -2,7 +2,7 @@
 
 namespace GenericTypes
 {
-    public class SomeClass<T> 
+    public class SomeClass<T> where T : ICache
     {
         private T someArg;
 
@@ -13,7 +13,7 @@ namespace GenericTypes
 
         public void PrintMyType()
         {
-            Console.WriteLine("Got {0} type", this.someArg.GetType());
+            someArg.Name();
         }
     }
 }
