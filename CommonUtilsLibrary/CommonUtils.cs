@@ -19,4 +19,17 @@ namespace CommonUtilsLibrary
             private string name;
         }
     }
+
+    public class CommonApi
+    {
+        public string GetSomeText()
+        {
+            return "hi";
+        }
+
+        public double GetMathComputations(int p_x)
+        {
+            return Math.Cos(p_x);
+        }
+    }
 }
