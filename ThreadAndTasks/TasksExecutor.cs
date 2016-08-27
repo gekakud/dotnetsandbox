@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace ThreadAndTaskTutorial
 {
-    class TasksExecutor:IExecutor
+    internal class TasksExecutor:IExecutor
     {
         private int NumOfJobs { get; set; }
-        readonly List<Task<int>> tasksList = new List<Task<int>>();
-        private List<int> _resultList = new List<int>();
+        readonly List<Task<int>> _tasksList = new List<Task<int>>();
+        private readonly List<int> _resultList = new List<int>();
 
         public TasksExecutor(int p_num)
         {
@@ -20,21 +20,24 @@ namespace ThreadAndTaskTutorial
 
             for (var i = 0; i < NumOfJobs; i++)
             {
-                tasksList.Add(new Task<int>(JobToExecute));
+                _tasksList.Add(new Task<int>(JobToExecute));
             }
         }
 
         public void StartJobs()
         {
-            foreach (var t in tasksList)
+            foreach (var t in _tasksList)
             {
                 t.Start();
                 _resultList.Add(t.Result);
             }
+
+            Task.WaitAll(_tasksList.ToArray() as Task<int>[]);
         }
 
         public void ShowResults()
         {
+            //
             foreach (var result in _resultList)
             {
                 Console.WriteLine(result.ToString());

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks.Dataflow;
-using System.Timers;
 using Timer = System.Timers.Timer;
 
 namespace TPLDataflow
@@ -25,7 +23,7 @@ namespace TPLDataflow
         }
     }
 
-    public class DataflowExecutor
+    public class DataflowExecutor : IDisposable
     {
         private BatchBlock<int> _bufferBatchBlock;
         private  TransformBlock<IEnumerable<int>, string> _buildTransformBlock;
@@ -35,6 +33,14 @@ namespace TPLDataflow
         public int UpdateTime = 1;
         private Timer _timer;
 
+        public void Dispose()
+        {
+            if (_timer != null)
+            {
+                _timer.Dispose();
+                _timer = null;
+            }
+        }
         public void PutDataIntoPipe(int p_d)
         {
             _bufferBatchBlock.Post(p_d);

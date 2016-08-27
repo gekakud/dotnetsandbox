@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using NUnit.Framework;
+using Shouldly;
 
-namespace UnitTests
+namespace UnitTestsNUnit
 {
     [TestFixture]
     public class TestClass
@@ -17,7 +18,7 @@ namespace UnitTests
         [Test, TestCaseSource(typeof (TestsFactory), "TestCase")]
         public void RunTest(TestObjectInstance p_objectToTest)
         {
-            
+            p_objectToTest.c.IsValid().ShouldBeTrue();
         }
 
         [TearDown]
@@ -32,11 +33,6 @@ namespace UnitTests
         
     }
 
-    public class TestObjectInstance
-    {
-        
-    }
-
     public class TestsFactory
     {
         public static IEnumerable TestCase
@@ -45,7 +41,7 @@ namespace UnitTests
             {
                 yield return new TestObjectInstance
                 {
-
+                    
                 };
 
                 yield return new TestObjectInstance
