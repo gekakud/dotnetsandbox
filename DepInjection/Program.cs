@@ -1,16 +1,17 @@
 ﻿using System;
+using DepInjection.DataProvider;
 
-namespace ConsoleApplication1
+namespace DepInjection
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             //Dependency injection (Simple way)
-            var _resolver = new Resolver();
+            var resolver = new Resolver();
 
-            var d1 = new RetreiveData(_resolver.ResolveProvider());
-            var d2 = new RetreiveData(_resolver.ResolveProvider());
+            var d1 = new RetreiveData(resolver.ResolveProvider());
+            var d2 = new RetreiveData(resolver.ResolveProvider());
 
             Console.ReadKey();
         }

@@ -1,7 +1,6 @@
 ﻿using System;
-using ConsoleApplication1.DataProvider;
 
-namespace ConsoleApplication1
+namespace DepInjection.DataProvider
 {
     public class StringDataProvider : DataProviderCommon, IData
     {
