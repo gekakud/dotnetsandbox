@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions;ValidateProjects" DefaultTargets="Build">
+  <PropertyGroup>
+    <MSBuildToolsPath32>C:\Program Files (x86)\MSBuild\12.0\bin\</MSBuildToolsPath32>
+    <MSBuildToolsRoot>C:\Program Files (x86)\MSBuild\</MSBuildToolsRoot>
+    <MSBuildFrameworkToolsPath>C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\</MSBuildFrameworkToolsPath>
+    <MSBuildFrameworkToolsPath32>C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\</MSBuildFrameworkToolsPath32>
+    <MSBuildFrameworkToolsRoot>C:\WINDOWS\Microsoft.NET\Framework\</MSBuildFrameworkToolsRoot>
+    <MSBuildRuntimeVersion>4.0.30319</MSBuildRuntimeVersion>
+    <FrameworkSDKRoot>C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\</FrameworkSDKRoot>
+    <SDK35ToolsPath>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\</SDK35ToolsPath>
+    <SDK40ToolsPath>C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\</SDK40ToolsPath>
+    <VCTargetsPath>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\</VCTargetsPath>
+    <VCTargetsPath10>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\</VCTargetsPath10>
+    <VCTargetsPath11>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\</VCTargetsPath11>
+    <VCTargetsPath12>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\</VCTargetsPath12>
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+    <WindowsSDK80Path>C:\Program Files (x86)\Windows Kits\8.1\</WindowsSDK80Path>
+    <Platform>Any CPU</Platform>
+    <AspNetConfiguration>Release</AspNetConfiguration>
+    <SolutionDir>C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\</SolutionDir>
+    <SolutionExt>.sln</SolutionExt>
+    <SolutionFileName>MyTutorials.sln</SolutionFileName>
+    <SolutionName>MyTutorials</SolutionName>
+    <SolutionPath>C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\MyTutorials.sln</SolutionPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{5CF8BD5F-D7ED-4506-BB66-3DB5CE289C57}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\GenericTypes\GenericTypes.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{B6C94842-8801-446B-AF97-518E39204BF0}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ThreadAndTasks\ThreadAndTaskTutorial.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{012246B7-00F5-4EA1-81EF-7215900E2374}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\DepInjection\DepInjection.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{3AADD528-87ED-48D0-8AAE-88716D68C877}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\WpfTest\WpfTest.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C0DDBE4A-0C3C-43DD-9F1D-A59AC2B86A07}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Events\Events.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{B9DC76B6-49A6-43E9-A28A-76277DA3411D}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ExtensionMethods\ExtensionMethods.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{649C3A1D-62C7-4A31-9DAE-AA705F8E9CB3}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\CollectionInterfaces\CollectionInterfaces.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{244060FC-7049-4491-9C07-439F4B82AEB3}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Singleton\SingletonSample.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{E955B060-3421-487E-847C-40119FCE3F3C}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\LINQ\LINQ.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{5E26A7BA-E770-44E7-A9AC-735E89D5667B}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\UnitTests\UnitTests.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+</SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <SolutionConfiguration Include="Debug|Any CPU">
+      <Configuration>Debug</Configuration>
+      <Platform>Any CPU</Platform>
+      <Content>
+        <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{5CF8BD5F-D7ED-4506-BB66-3DB5CE289C57}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\GenericTypes\GenericTypes.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{B6C94842-8801-446B-AF97-518E39204BF0}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ThreadAndTasks\ThreadAndTaskTutorial.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{012246B7-00F5-4EA1-81EF-7215900E2374}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\DepInjection\DepInjection.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{3AADD528-87ED-48D0-8AAE-88716D68C877}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\WpfTest\WpfTest.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C0DDBE4A-0C3C-43DD-9F1D-A59AC2B86A07}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Events\Events.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{B9DC76B6-49A6-43E9-A28A-76277DA3411D}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ExtensionMethods\ExtensionMethods.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{649C3A1D-62C7-4A31-9DAE-AA705F8E9CB3}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\CollectionInterfaces\CollectionInterfaces.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{244060FC-7049-4491-9C07-439F4B82AEB3}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Singleton\SingletonSample.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{E955B060-3421-487E-847C-40119FCE3F3C}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\LINQ\LINQ.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{5E26A7BA-E770-44E7-A9AC-735E89D5667B}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\UnitTests\UnitTests.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+</SolutionConfiguration>
+      </Content>
+    </SolutionConfiguration>
+    <SolutionConfiguration Include="Release|Any CPU">
+      <Configuration>Release</Configuration>
+      <Platform>Any CPU</Platform>
+      <Content>
+        <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{5CF8BD5F-D7ED-4506-BB66-3DB5CE289C57}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\GenericTypes\GenericTypes.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{B6C94842-8801-446B-AF97-518E39204BF0}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ThreadAndTasks\ThreadAndTaskTutorial.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{012246B7-00F5-4EA1-81EF-7215900E2374}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\DepInjection\DepInjection.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{3AADD528-87ED-48D0-8AAE-88716D68C877}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\WpfTest\WpfTest.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C0DDBE4A-0C3C-43DD-9F1D-A59AC2B86A07}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Events\Events.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{B9DC76B6-49A6-43E9-A28A-76277DA3411D}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ExtensionMethods\ExtensionMethods.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{649C3A1D-62C7-4A31-9DAE-AA705F8E9CB3}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\CollectionInterfaces\CollectionInterfaces.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{244060FC-7049-4491-9C07-439F4B82AEB3}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Singleton\SingletonSample.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{E955B060-3421-487E-847C-40119FCE3F3C}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\LINQ\LINQ.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{5E26A7BA-E770-44E7-A9AC-735E89D5667B}" AbsolutePath="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\UnitTests\UnitTests.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+</SolutionConfiguration>
+      </Content>
+    </SolutionConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\GenericTypes\GenericTypes.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ThreadAndTasks\ThreadAndTaskTutorial.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\DepInjection\DepInjection.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\WpfTest\WpfTest.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Events\Events.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ExtensionMethods\ExtensionMethods.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\CollectionInterfaces\CollectionInterfaces.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Singleton\SingletonSample.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\LINQ\LINQ.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\UnitTests\UnitTests.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="ValidateSolutionConfiguration">
+    <Error Condition="('$(CurrentSolutionConfigurationContents)' == '') and ('$(SkipInvalidConfigurations)' != 'true')" Text="The specified solution configuration &quot;$(Configuration)|$(Platform)&quot; is invalid. Please specify a valid solution configuration using the Configuration and Platform properties (e.g. MSBuild.exe Solution.sln /p:Configuration=Debug /p:Platform=&quot;Any CPU&quot;) or leave those properties blank to use the default solution configuration." Code="MSB4126" HelpKeyword="MSBuild.SolutionInvalidSolutionConfiguration" />
+    <Warning Condition="('$(CurrentSolutionConfigurationContents)' == '') and ('$(SkipInvalidConfigurations)' == 'true')" Text="The specified solution configuration &quot;$(Configuration)|$(Platform)&quot; is invalid. Please specify a valid solution configuration using the Configuration and Platform properties (e.g. MSBuild.exe Solution.sln /p:Configuration=Debug /p:Platform=&quot;Any CPU&quot;) or leave those properties blank to use the default solution configuration." Code="MSB4126" HelpKeyword="MSBuild.SolutionInvalidSolutionConfiguration" />
+    <Message Condition="'$(CurrentSolutionConfigurationContents)' != ''" Text="Building solution configuration &quot;$(Configuration)|$(Platform)&quot;." />
+  </Target>
+  <Target Name="ValidateToolsVersions">
+    <Error Condition="'$(MSBuildToolsVersion)' == '2.0' and ('$(ProjectToolsVersion)' != '2.0' and '$(ProjectToolsVersion)' != '')" Text="The tools version &quot;$(MSBuildToolsVersion)&quot; of the solution does not support building projects with a different tools version." Code="MSB4149" HelpKeyword="MSBuild.SolutionToolsVersionDoesNotSupportProjectToolsVersion" />
+  </Target>
+  <Target Name="ValidateProjects" />
+  <Target Name="GetSolutionConfigurationContents" Outputs="$(SolutionConfigurationContents)" />
+  <Target Name="Build" Outputs="@(CollectedBuildOutput)">
+    <MSBuild Projects="@(ProjectReference)" BuildInParallel="True" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Clean">
+    <MSBuild Projects="@(ProjectReference-&gt;Reverse())" Targets="Clean" BuildInParallel="True" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)" />
+  </Target>
+  <Target Name="Rebuild" Outputs="@(CollectedBuildOutput)">
+    <MSBuild Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Publish">
+    <MSBuild Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)" />
+  </Target>
+  <Target Name="GenericTypes" Outputs="@(GenericTypesBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\GenericTypes\GenericTypes.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="GenericTypesBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="GenericTypes:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\GenericTypes\GenericTypes.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="GenericTypes:Rebuild" Outputs="@(GenericTypesBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\GenericTypes\GenericTypes.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="GenericTypesBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="GenericTypes:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\GenericTypes\GenericTypes.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="ThreadAndTaskTutorial" Outputs="@(ThreadAndTaskTutorialBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ThreadAndTasks\ThreadAndTaskTutorial.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="ThreadAndTaskTutorialBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="ThreadAndTaskTutorial:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ThreadAndTasks\ThreadAndTaskTutorial.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="ThreadAndTaskTutorial:Rebuild" Outputs="@(ThreadAndTaskTutorialBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ThreadAndTasks\ThreadAndTaskTutorial.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="ThreadAndTaskTutorialBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="ThreadAndTaskTutorial:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ThreadAndTasks\ThreadAndTaskTutorial.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="DepInjection" Outputs="@(DepInjectionBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\DepInjection\DepInjection.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="DepInjectionBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DepInjection:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\DepInjection\DepInjection.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="DepInjection:Rebuild" Outputs="@(DepInjectionBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\DepInjection\DepInjection.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="DepInjectionBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DepInjection:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\DepInjection\DepInjection.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="WpfTest" Outputs="@(WpfTestBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\WpfTest\WpfTest.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="WpfTestBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="WpfTest:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\WpfTest\WpfTest.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="WpfTest:Rebuild" Outputs="@(WpfTestBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\WpfTest\WpfTest.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="WpfTestBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="WpfTest:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\WpfTest\WpfTest.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="Events" Outputs="@(EventsBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Events\Events.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="EventsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Events:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Events\Events.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="Events:Rebuild" Outputs="@(EventsBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Events\Events.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="EventsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Events:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Events\Events.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="ExtensionMethods" Outputs="@(ExtensionMethodsBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ExtensionMethods\ExtensionMethods.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="ExtensionMethodsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="ExtensionMethods:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ExtensionMethods\ExtensionMethods.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="ExtensionMethods:Rebuild" Outputs="@(ExtensionMethodsBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ExtensionMethods\ExtensionMethods.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="ExtensionMethodsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="ExtensionMethods:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\ExtensionMethods\ExtensionMethods.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="CollectionInterfaces" Outputs="@(CollectionInterfacesBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\CollectionInterfaces\CollectionInterfaces.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectionInterfacesBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="CollectionInterfaces:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\CollectionInterfaces\CollectionInterfaces.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="CollectionInterfaces:Rebuild" Outputs="@(CollectionInterfacesBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\CollectionInterfaces\CollectionInterfaces.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectionInterfacesBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="CollectionInterfaces:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\CollectionInterfaces\CollectionInterfaces.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="SingletonSample" Outputs="@(SingletonSampleBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Singleton\SingletonSample.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="SingletonSampleBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="SingletonSample:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Singleton\SingletonSample.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="SingletonSample:Rebuild" Outputs="@(SingletonSampleBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Singleton\SingletonSample.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="SingletonSampleBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="SingletonSample:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\Singleton\SingletonSample.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="LINQ" Outputs="@(LINQBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\LINQ\LINQ.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="LINQBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="LINQ:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\LINQ\LINQ.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="LINQ:Rebuild" Outputs="@(LINQBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\LINQ\LINQ.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="LINQBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="LINQ:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\LINQ\LINQ.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="UnitTests" Outputs="@(UnitTestsBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\UnitTests\UnitTests.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="UnitTestsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="UnitTests:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\UnitTests\UnitTests.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="UnitTests:Rebuild" Outputs="@(UnitTestsBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\UnitTests\UnitTests.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="UnitTestsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="UnitTests:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\gekak_000\Documents\Visual Studio 2013\Projects\MyTutorial\UnitTests\UnitTests.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+</Project>
