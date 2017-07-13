@@ -28,7 +28,7 @@ namespace ParallelLINQ
 
             //find negative number in array using ParallelQuery ?
             var watch = Stopwatch.StartNew();
-//            ParallelQuery<int> negatives = numbers.AsParallel().Where(p_n => p_n < 0);
+            ParallelQuery<int> negatives = numbers.AsParallel().Where(p_n => p_n < 0);
             //OR
 //            ParallelQuery<int> negs = from num in numbers
 //                .AsParallel()
@@ -42,7 +42,7 @@ namespace ParallelLINQ
             ShowResult(negatives);
             
             //same thing but using Parallel for each loop ?
-//            var bag = new ConcurrentBag<int>();
+            var bag = new ConcurrentBag<int>();
 //            watch.Start();
 //
 //            Parallel.ForEach(numbers, num =>

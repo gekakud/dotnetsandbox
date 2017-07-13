@@ -77,11 +77,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionSimple", "Reflect
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelLINQ", "ParallelLINQ\ParallelLINQ.csproj", "{937E2747-2226-42DD-8343-63B236CF0CBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapperExample", "AutoMapperExample\AutoMapperExample.csproj", "{478A7399-1614-4B72-8FD5-C65E2A851673}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis", "Redis\Redis.csproj", "{2497DACB-4A4C-4469-A8E7-ED19A2F22CF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapperEx", "AutoMapperEx\AutoMapperEx.csproj", "{559FA231-7C18-4949-92A9-57E7DE1AEEF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderPattern3", "BuilderPattern3\BuilderPattern3.csproj", "{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -393,18 +393,6 @@ Global
 		{937E2747-2226-42DD-8343-63B236CF0CBF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{937E2747-2226-42DD-8343-63B236CF0CBF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{937E2747-2226-42DD-8343-63B236CF0CBF}.Release|x86.ActiveCfg = Release|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Debug|x86.Build.0 = Debug|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Release|Any CPU.Build.0 = Release|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Release|x86.ActiveCfg = Release|Any CPU
-		{478A7399-1614-4B72-8FD5-C65E2A851673}.Release|x86.Build.0 = Release|Any CPU
 		{2497DACB-4A4C-4469-A8E7-ED19A2F22CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2497DACB-4A4C-4469-A8E7-ED19A2F22CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2497DACB-4A4C-4469-A8E7-ED19A2F22CF1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -429,6 +417,18 @@ Global
 		{559FA231-7C18-4949-92A9-57E7DE1AEEF0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{559FA231-7C18-4949-92A9-57E7DE1AEEF0}.Release|x86.ActiveCfg = Release|Any CPU
 		{559FA231-7C18-4949-92A9-57E7DE1AEEF0}.Release|x86.Build.0 = Release|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Debug|x86.Build.0 = Debug|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Release|x86.ActiveCfg = Release|Any CPU
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -458,5 +458,6 @@ Global
 		{EF838FB6-7EA4-4CBA-B8AC-D1E645E5F5F7} = {800E7B82-A627-4897-89B9-2AF24BA9DBED}
 		{FCC99C9E-0801-4543-8BAB-22065380CB99} = {92D4E331-B1E2-44E4-BF4F-7CBC7D756022}
 		{937E2747-2226-42DD-8343-63B236CF0CBF} = {800E7B82-A627-4897-89B9-2AF24BA9DBED}
+		{C4C1F90F-AB8C-48F7-B5AB-9F69540D00C1} = {D519D2A0-21B4-4D0E-AE28-E163B35A3D75}
 	EndGlobalSection
 EndGlobal
