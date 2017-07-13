@@ -3,13 +3,27 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks.Dataflow;
 using Timer = System.Timers.Timer;
-using Microsoft.ConcurrencyVisualizer.Instrumentation;
 
 namespace TPLDataflow
 {
+    public enum TypeOfServerAction
+    {
+        Get,
+        Set,
+        Update,
+        Find
+    }
+
+    public class ServerAction
+    {
+        public TypeOfServerAction ActionType { get; set; }
+        public string Payload { get; set; }
+        public Guid RequestId { get; set; }
+    }
+
     public class Program
     {
-        private Timer _t;
+        private Timer _timer;
         private static void Main()
         {         
             DataflowExecutor d = new DataflowExecutor(new Configs{BufferSize = 2,UIBufferSize = 3,DelayTime = 2});
@@ -18,10 +32,40 @@ namespace TPLDataflow
             while (true)
             {
                 d.PutDataIntoPipe(i);
+                var ttt = DummyActionsGenerator.GetServerActions();
                 i++;
             Thread.Sleep(500);
             }
         }
+    }
+
+    public static class DummyActionsGenerator
+    {
+        public static List<ServerAction> GetServerActions()
+        {
+            var list = new List<ServerAction>();
+            var rnd = new Random(4321);
+            var numOfActions = rnd.Next(1, 10);
+
+            for (var i = 0; i < numOfActions; i++)
+            {
+                var randActType = (TypeOfServerAction)rnd.Next(0, (int) TypeOfServerAction.Find);
+
+                list.Add(new ServerAction
+                {
+                    ActionType = randActType,
+                    Payload = "bla",
+                    RequestId = Guid.NewGuid()
+                });
+            }
+
+            return list;
+        }
+    }
+
+    internal class DataflowManager
+    {
+        
     }
 
     public class DataflowExecutor : IDisposable

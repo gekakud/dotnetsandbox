@@ -3,6 +3,6 @@
     public interface IData
     {
         object GetData();
-        bool SaveData();
+        bool SaveData(string p_data);
     }
 }

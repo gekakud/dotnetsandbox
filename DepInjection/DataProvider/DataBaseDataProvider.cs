@@ -12,7 +12,7 @@ namespace DepInjection.DataProvider
             return null;
         }
 
-        public bool SaveData()
+        public bool SaveData(string p_data)
         {
             return true;
         }

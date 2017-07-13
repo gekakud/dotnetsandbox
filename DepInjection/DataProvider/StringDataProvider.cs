@@ -15,15 +15,14 @@ namespace DepInjection.DataProvider
             return null;
         }
 
-        public bool SaveData()
-        {
-            return true;
-        }
-
-
         public void Convert()
         {
             ///Convert data
+        }
+
+        public bool SaveData(string p_data)
+        {
+            return true;
         }
     }
 }
