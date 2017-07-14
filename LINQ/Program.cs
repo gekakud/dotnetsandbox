@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LINQ
 {
-    class Program
+    internal class Program
     {
         // LINQ is a library full of method extensions for IEnumerable
         static void Main(string[] args)

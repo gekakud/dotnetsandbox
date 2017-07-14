@@ -16,12 +16,12 @@ namespace StrategyPattern
             var attr = p_validationStrategy.GetAttributeOfType<CardResolverAttribute>();
 
             var r = Activator.CreateInstance(attr.Strategy);
-            this.strategy = r as ValidationStrategy;
+            strategy = r as ValidationStrategy;
         }
 
         public bool IsValid()
         {
-            return this.strategy.IsCardValid(this);
+            return strategy.IsCardValid(this);
         }      
     }
 }

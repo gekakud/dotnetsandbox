@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             Pizza p = new PizzaBuilder().AddCheese().AddOlives().SetPizzaSize();
         }
