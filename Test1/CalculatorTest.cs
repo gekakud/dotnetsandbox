@@ -1,4 +1,5 @@
-﻿using CalculatorProject;
+﻿using System;
+using CalculatorProject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Test1
@@ -9,8 +10,8 @@ namespace Test1
         [TestMethod]
         public void TestAdd()
         {
-            double addResult = 10;
-            double actualAdd;
+            int addResult = 10;
+            int actualAdd;
             
             //arrange
             var calc = new Calculator();
@@ -23,8 +24,8 @@ namespace Test1
         [TestMethod]
         public void TestDivide()
         {
-            double divResult = 11;
-            double actualDiv;
+            int divResult = 11;
+            int actualDiv;
 
             //arrange
             var calc = new Calculator();
@@ -32,6 +33,14 @@ namespace Test1
             actualDiv = calc.Divide(33, 3);
             //assert
             Assert.AreEqual(divResult, actualDiv);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(DivideByZeroException))]
+        public void DivideByZero()
+        {
+            var calc = new Calculator();
+            var vvv = calc.Divide(5, 0);
         }
     }
 }

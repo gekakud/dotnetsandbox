@@ -1,13 +1,15 @@
-﻿namespace CalculatorProject
+﻿using System;
+
+namespace CalculatorProject
 {
     public class Calculator
     {
-        public double Add(double x, double y)
+        public int Add(int x, int y)
         {
             return x + y;
         }
 
-        public double Divide(double x, double y)
+        public int Divide(int x, int y)
         {
             return x / y;
         }
