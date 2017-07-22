@@ -17,7 +17,10 @@ namespace TPLDataflow
         
         private BatchBlock<ClientRequest> _requestBuffer;
         private TransformBlock<IEnumerable<ClientRequest>, IEnumerable<ClientRespond>> _requestProcessor;
+        
         private ActionBlock<IEnumerable<ClientRespond>> _respondSender;
+        private ActionBlock<IEnumerable<ClientRespond>> _errorHandler;
+        private BroadcastBlock<IEnumerable<ClientRespond>> _respondFilter;
 
         private readonly List<IDisposable> _disposables;
 
@@ -32,20 +35,33 @@ namespace TPLDataflow
         private void CreateAndLinkBlocks()
         {
             _requestBuffer = new BatchBlock<ClientRequest>(5);
+
             _requestProcessor =
                 new TransformBlock<IEnumerable<ClientRequest>, IEnumerable<ClientRespond>>(
                     requests => TryProcessRequests(requests));
 
-            _respondSender = new ActionBlock<IEnumerable<ClientRespond>>(responds =>
-            {
-                foreach (var clientRespond in responds)
-                {
-                    _communicationService.SendRespond(clientRespond);
-                }
-            });
+            _respondSender =
+                new ActionBlock<IEnumerable<ClientRespond>>(
+                    responds =>
+                    {
+                        responds.Where(e => !e.IsError)
+                            .ToList()
+                            .ForEach(clientRespond => _communicationService.SendRespond(clientRespond));
+                    });
+
+            _errorHandler =
+                new ActionBlock<IEnumerable<ClientRespond>>(
+                    responds =>
+                        responds.Where(e => e.IsError)
+                            .ToList()
+                            .ForEach(respond => Console.WriteLine(respond.RequestId + " failed")));
+
+            _respondFilter = new BroadcastBlock<IEnumerable<ClientRespond>>(items => items);
 
             _disposables.Add(_requestBuffer.LinkTo(_requestProcessor));
-            _disposables.Add(_requestProcessor.LinkTo(_respondSender));
+            _disposables.Add(_requestProcessor.LinkTo(_respondFilter));
+            _disposables.Add(_respondFilter.LinkTo(_respondSender));
+            _disposables.Add(_respondFilter.LinkTo(_errorHandler));
         }
 
         private IEnumerable<ClientRespond> TryProcessRequests(IEnumerable<ClientRequest> pRequests)
