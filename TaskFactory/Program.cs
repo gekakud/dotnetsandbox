@@ -10,7 +10,7 @@ namespace TaskFactory
         {
             Action action = () =>
             {
-                for (int i = 0; i < 5; i++)
+                for (var i = 0; i < 5; i++)
                 {
                     Thread.Sleep(200);
                     Console.WriteLine("Count is " + i + " in task" + Task.CurrentId);
@@ -19,19 +19,17 @@ namespace TaskFactory
                 Console.WriteLine("Task Finished");
             };
 
-            Task t1 = Task.Factory.StartNew(action);
-            Task t2 = Task.Factory.StartNew(action);
+            var t1 = Task.Run(action);
+            var t2 = Task.Run(action);
 
             //t1.Wait();
             //OR
-            Task.WaitAll(t1,t2);
             Console.WriteLine("Main waits for all tasks to finish");
+            Task.WaitAll(t1,t2);
 
-            Task<string> taskWithResult = Task<string>.Factory.StartNew(BuildText, Thread.CurrentThread.ManagedThreadId as object);
-            
+            Task<string> taskWithResult = Task<string>.Factory.StartNew(BuildText, Thread.CurrentThread.ManagedThreadId);
+
             Console.WriteLine(taskWithResult.Result);
-
-
             Console.ReadKey();
         }
 

@@ -27,6 +27,7 @@ namespace ExtensionMethods
         }
     }
 
+    //String extension!
     public static class MyStringExtension
     {
         public static int GetNumberOfSpaces(this string p_stringToApllyOn)

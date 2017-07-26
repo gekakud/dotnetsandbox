@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TPLDataflow.Data;
 
 namespace TPLDataflow
 {
@@ -9,7 +10,7 @@ namespace TPLDataflow
         {
             var list = new List<ClientRequest>();
             var rnd = new Random(DateTime.Now.Millisecond);
-            var numOfActions = rnd.Next(1, 5);
+            var numOfActions = rnd.Next(1, 4);
 
             for (var i = 0; i < numOfActions; i++)
             {

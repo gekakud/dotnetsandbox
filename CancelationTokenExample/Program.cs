@@ -14,7 +14,6 @@ namespace CancelationTokenExample
             var t1 = Task.Factory.StartNew(MyTask, cts.Token, cts.Token);
             try
             {
-
                 Thread.Sleep(2000);
 
                 //Request to cancel execution of MyTask

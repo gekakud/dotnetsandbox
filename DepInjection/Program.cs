@@ -16,7 +16,7 @@ namespace DepInjection
             var iocContainer = new BootStrapper().Bootstrap();
 
             var textIndexer = iocContainer.Resolve<InTextIndexer>();
-            textIndexer.WichCacheDoIuse();
+            textIndexer.WhichCacheDoIuse();
 
             Console.ReadKey();
         }
@@ -50,7 +50,7 @@ namespace DepInjection
             _cacheService = p_cacheService;
         }
 
-        public void WichCacheDoIuse()
+        public void WhichCacheDoIuse()
         {
             Console.WriteLine("\nusing " + _cacheService.GetType().Name);
         }

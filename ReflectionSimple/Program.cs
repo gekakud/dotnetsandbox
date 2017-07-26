@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -9,9 +10,12 @@ namespace ReflectionSimple
     {
         private static void Main()
         {
+            Directory.SetCurrentDirectory(@"..\..\..\");
+            var path1 = Directory.GetCurrentDirectory();
+            var path2 = @"CommonUtilsLibrary\bin\Debug\CommonUtilsLibrary.dll";
+            var path3 = Path.Combine(path1, path2);
             var assembly =
-                Assembly.LoadFile(
-                    @"C:\Users\gekak_000\Desktop\MyTutorial\CommonUtilsLibrary\bin\Debug\CommonUtilsLibrary.dll");
+                Assembly.LoadFile(path3);
             var myType = assembly.GetType("CommonUtilsLibrary.CommonUtils");
 
             IList<Type> listOfTypes = assembly.GetExportedTypes().ToList();
