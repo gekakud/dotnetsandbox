@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,7 +14,7 @@ namespace Reactive
                 .Interval(TimeSpan.FromMilliseconds(800))
                 .Subscribe(c => { Console.WriteLine(c); });
             
-            var ss = new SomeService();
+            var messagePublisher = new PublisherService();
 
             Task.Run(() =>
             {
@@ -26,7 +22,7 @@ namespace Reactive
                 {
                     //items producer
                     Thread.Sleep(200);
-                    ss.PublishNewCommand(new NewMessageCommand(new Message("hello me!")));
+                    messagePublisher.PublishNewCommand(new NewMessageCommand(new Message("hello me!")));
                 }
             });
 
@@ -36,38 +32,33 @@ namespace Reactive
                 {
                     //items producer
                     Thread.Sleep(500);
-                    ss.PublishNewCommand(new QueryCommand("SELECT some data query"));
+                    messagePublisher.PublishNewCommand(new QueryCommand("SELECT some data query"));
                 }
             });
 
             Console.ReadKey();
             dummyCommandsProducer.Dispose();
         }
-
-        
     }
 
-    public class SomeService
+    //we will publish all commands to this service
+    public class PublisherService
     {
-        private static Subject<AppCommand> InnerCommands;
+        private static Subject<AppCommand> _commandConsumer;
 
-        public static IObservable<AppCommand> Commands
-        {
-            get { return InnerCommands; }
-        }
-
+        //command producer passes messages to consumer
         public void PublishNewCommand(AppCommand cmd)
         {
             //items of AppCommand type consumer
 
-            //InnerCommands.OnError(new Exception("HAHAHA"));
-            InnerCommands.OnNext(cmd);
-            //InnerCommands.OnCompleted();
+            //CommandConsumer.OnError(new Exception("HAHAHA"));
+            _commandConsumer.OnNext(cmd);
+            //CommandConsumer.OnCompleted();
         }
 
-        public SomeService()
+        public PublisherService()
         {
-            InnerCommands = new Subject<AppCommand>();
+            _commandConsumer = new Subject<AppCommand>();
             BindCommandHandlers();
             BindLogs();
         }
@@ -75,12 +66,14 @@ namespace Reactive
         private void BindLogs()
         {
             //log on each AppCommand
-            Commands.Subscribe(c => { Console.WriteLine(c.Issued + "| LOGGER: got command from " + c.Issuer); });
+            _commandConsumer.
+                Subscribe(c => { Console.WriteLine(c.Issued + "| LOGGER: got command from " + c.Issuer); });
         }
 
         private void BindCommandHandlers()
         {
-            Commands.OfType<NewMessageCommand>()
+            //define actions for two message types
+            _commandConsumer.OfType<NewMessageCommand>()
                 .Subscribe(
                     //onNext
                     m => { Console.WriteLine(m.Message.MsgText); },
@@ -89,7 +82,7 @@ namespace Reactive
                     //onCompleted
                     (() => { Console.WriteLine("message onComplete called"); }));
 
-            Commands.OfType<QueryCommand>()
+            _commandConsumer.OfType<QueryCommand>()
                 .Subscribe(
                 q => { Console.WriteLine(q.Query + " from " + q.Issuer); });
         }
