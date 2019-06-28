@@ -102,6 +102,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRclient", "SignalRcli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "AsyncAwait\AsyncAwait.csproj", "{5EEAB6A4-6257-4D3D-AF01-F713302A218F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reactive", "Reactive\Reactive.csproj", "{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -508,6 +510,18 @@ Global
 		{5EEAB6A4-6257-4D3D-AF01-F713302A218F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5EEAB6A4-6257-4D3D-AF01-F713302A218F}.Release|x86.ActiveCfg = Release|Any CPU
 		{5EEAB6A4-6257-4D3D-AF01-F713302A218F}.Release|x86.Build.0 = Release|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Debug|x86.Build.0 = Debug|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Release|x86.ActiveCfg = Release|Any CPU
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -543,6 +557,7 @@ Global
 		{93A2C24E-3D93-43C1-9087-3A5EDAE5C5CE} = {755051DC-EED9-4FDC-BEA6-FF961F443E0A}
 		{2748B0CB-D8F6-423D-B14C-8BD090CE4FDF} = {755051DC-EED9-4FDC-BEA6-FF961F443E0A}
 		{5EEAB6A4-6257-4D3D-AF01-F713302A218F} = {800E7B82-A627-4897-89B9-2AF24BA9DBED}
+		{4CCB862A-8FC8-4DDD-ABA0-7C4ECC74A62D} = {800E7B82-A627-4897-89B9-2AF24BA9DBED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {827A0885-D816-47A8-9B7F-F679AAD8F2D9}
