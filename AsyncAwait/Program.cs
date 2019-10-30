@@ -20,7 +20,7 @@ namespace AsyncAwait
         {
             Executer e = new Executer();
 
-            bool t = await e.StartAsyncTask();
+            bool res = await e.StartAsyncTask();
 
             Console.WriteLine("HAHA");
         }
