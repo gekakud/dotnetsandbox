@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using System.Timers;
 using TPLDataflow.Data;
@@ -82,30 +84,46 @@ namespace TPLDataflow
         {
             _triggerTimer.Stop();
             _triggerTimer.Start();
+            
+            var ts = new List<Task<ClientRespond>>();
+
+            foreach (var clientRequest in pRequests)
+            {
+                ts.Add(new Task<ClientRespond>(() =>
+                {
+                    try
+                    {
+                        Console.WriteLine("request " + clientRequest.ActionType + " is being processed");
+                        return new ClientRespond
+                        {
+                            Data = clientRequest.Payload + "ready",
+                            IsError = false,
+                            RequestId = clientRequest.RequestId
+                        };
+                    }
+                    catch (Exception)
+                    {
+                        return new ClientRespond
+                        {
+                            Data = string.Empty,
+                            IsError = true,
+                            RequestId = clientRequest.RequestId
+                        };
+                    }
+                }));
+            }
+
+            var results = new ConcurrentBag<ClientRespond>();
 
             //not executed sequentially
-            return pRequests.AsParallel().Select(p =>
+            ts.ForEach(t =>
             {
-                Console.WriteLine("request " + p.ActionType + " is being processed");
-                try
-                {
-                    return new ClientRespond
-                    {
-                        Data = p.Payload + "ready",
-                        IsError = false,
-                        RequestId = p.RequestId
-                    };
-                }
-                catch (Exception)
-                {
-                    return new ClientRespond
-                    {
-                        Data = string.Empty,
-                        IsError = true,
-                        RequestId = p.RequestId
-                    };
-                }
+                t.Start();
+                results.Add(t.Result);
             });
+            Task.WaitAll(ts.ToArray());
+
+            return results.ToList();        
         }
 
         public void PostRequestsToBuffer()
