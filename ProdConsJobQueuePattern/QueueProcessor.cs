@@ -41,7 +41,6 @@ namespace ProdConsJobQueuePattern
                 var processingDelay = rn.Next(1, 5);
 
                 //processing...
-
                 await Task.Delay(processingDelay * 1000);
 
                 Console.WriteLine("Cashier {0} finished processing client {1} within {2} seconds"
