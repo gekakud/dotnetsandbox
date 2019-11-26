@@ -6,7 +6,7 @@ namespace Reactive
     {
         public DateTime Issued { get; private set; }
 
-        public string Issuer { get; private set; }
+        public string Issuer { get; set; }
 
         public AppCommand()
         {

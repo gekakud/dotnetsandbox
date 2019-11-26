@@ -4,7 +4,7 @@ namespace ThreadAndTaskTutorial
 { 
     public class Program
     {
-        private const int NumOfJobs = 10;
+        private const int NumOfJobs = 20;
 
         static void Main()
         {
@@ -16,6 +16,8 @@ namespace ThreadAndTaskTutorial
             ThreadsExecutor jeExecutor = new ThreadsExecutor(p_numOfJobs);
             jeExecutor.StartJobs();
 
+            Console.WriteLine("Enter to proceed");
+            Console.ReadKey();
             TasksExecutor teExecutor = new TasksExecutor(p_numOfJobs);
             teExecutor.StartJobs();
 

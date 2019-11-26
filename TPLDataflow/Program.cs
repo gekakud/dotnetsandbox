@@ -35,7 +35,7 @@ namespace TPLDataflow
                 //simulate posting new requests to server dataflow
                 _dfManager.PostRequestsToBuffer();
                 
-                var delay = rnd.Next(1000, 10000);
+                var delay = rnd.Next(10, 1000);
                 Thread.Sleep(delay);
             }
         }

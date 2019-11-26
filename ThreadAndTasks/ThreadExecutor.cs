@@ -30,10 +30,7 @@ namespace ThreadAndTaskTutorial
 
         public void StartJobs()
         {
-            foreach (var job in _jobList)
-            {
-                job.Start();
-            }
+            _jobList.ForEach(j=>j.Start());
         }
 
         private event NotifierDelegate MyNotifier;
@@ -47,9 +44,9 @@ namespace ThreadAndTaskTutorial
         private void JobToExecute()
         {
             double result = 0;
-            for (var i = 0; i < 100000; i++)
+            for (var i = 0; i < 10000000; i++)
             {
-                result += i*(Math.PI/Math.Sqrt(26784)/0.074);
+                result += i*(Math.PI/Math.Sqrt(26784)/0.00074);
             }
             MyNotifier(Thread.CurrentThread.ManagedThreadId);
         }

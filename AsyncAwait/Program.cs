@@ -1,72 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace AsyncAwait
 {
-    public class Program
+    class Program
     {
+        private const string URL = "https://docs.microsoft.com/en-us/dotnet/csharp/csharp";
+
         static void Main(string[] args)
         {
-            Example();
-
-            Console.ReadKey();
+            DoSynchronousWork();
+            var someTask = DoSomethingAsync();
+            DoSynchronousWorkAfterAwait();
+            someTask.Wait(); //this is a blocking call, use it only on Main method
+            Console.ReadLine();
+        }
+        public static void DoSynchronousWork()
+        {
+            // You can do whatever work is needed here
+            Console.WriteLine("1. Doing some work synchronously");
         }
 
-        static async void Example()
+        static async Task DoSomethingAsync() //A Task return type will eventually yield a void
         {
-            Executer e = new Executer();
-
-            bool res = await e.StartAsyncTask();
-
-            Console.WriteLine("HAHA");
-        }
-    }
-
-    public class Executer
-    {
-        public async Task<bool> StartAsyncTask()
-        {
-            try
-            {
-                await Task.Run(() => { Console.WriteLine("First await action"); })
-                        .ContinueWith(prevTask =>
-                        {
-                            Thread.Sleep(3000);
-                            Console.WriteLine("Second await action with prev task status:" + prevTask.Status);
-                        });
-            }
-            catch (Exception e)
-            {
-
-                Console.WriteLine("GOT exceptio:" + e.Message);
-            }
-
-            return true;
+            Console.WriteLine("2. Async task has started...");
+            await GetStringAsync(); // we are awaiting the Async Method GetStringAsync
         }
 
-        public async Task<bool> StartAsyncTaskWithException()
+        static async Task GetStringAsync()
         {
-            try
+            using (var httpClient = new HttpClient())
             {
-                await Task.Run(() => { Console.WriteLine("First await action"); })
-                    .ContinueWith(prevTask =>
-                    {
-                        throw new Exception("hhh");
-                        Thread.Sleep(3000);
-                        Console.WriteLine("Second await action with prev task status:" + prevTask.Status);
-                    });
+                Console.WriteLine("3. Awaiting the result of GetStringAsync of Http Client...");
+                string result = await httpClient.GetStringAsync(URL); //execution pauses here while awaiting GetStringAsync to complete
+
+                //From this line and below, the execution will resume once the above awaitable is done
+                //using await keyword, it will do the magic of unwrapping the Task<string> into string (result variable)
+                Console.WriteLine("4. The awaited task has completed. Let's get the content length...");
+                Console.WriteLine($"5. The length of http Get for {URL}");
+                Console.WriteLine($"6. {result.Length} character");
             }
-            catch (Exception e)
+        }
+
+        static void DoSynchronousWorkAfterAwait()
+        {
+            //This is the work we can do while waiting for the awaited Async Task to complete
+            Console.WriteLine("7. While waiting for the async task to finish, we can do some unrelated work...");
+            for (var i = 0; i <= 5; i++)
             {
-
-                Console.WriteLine("GOT exceptio:" + e.Message);
+                for (var j = i; j <= 5; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
             }
 
-            return true;
         }
     }
 }
