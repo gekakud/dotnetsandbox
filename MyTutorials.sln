@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericTypes", "GenericTypes\GenericTypes.csproj", "{5CF8BD5F-D7ED-4506-BB66-3DB5CE289C57}"
 EndProject
@@ -107,6 +107,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxNet", "RxNet\RxNet.csproj", "{620F6AC0-B6B5-4D4E-8F3C-2E5205AE78F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdConsJobQueuePattern", "ProdConsJobQueuePattern\ProdConsJobQueuePattern.csproj", "{6F3AED47-9242-4D44-8E3C-53F1D06074C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Delegates.csproj", "{D727CF19-0DD9-4F7C-998E-36ADDF91451A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -550,6 +552,18 @@ Global
 		{6F3AED47-9242-4D44-8E3C-53F1D06074C0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6F3AED47-9242-4D44-8E3C-53F1D06074C0}.Release|x86.ActiveCfg = Release|Any CPU
 		{6F3AED47-9242-4D44-8E3C-53F1D06074C0}.Release|x86.Build.0 = Release|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Debug|x86.Build.0 = Debug|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Release|x86.ActiveCfg = Release|Any CPU
+		{D727CF19-0DD9-4F7C-998E-36ADDF91451A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
