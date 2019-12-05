@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AsyncAwait
@@ -19,7 +20,7 @@ namespace AsyncAwait
         public static void DoSynchronousWork()
         {
             // You can do whatever work is needed here
-            Console.WriteLine("1. Doing some work synchronously");
+            Console.WriteLine("1. Doing some work synchronously on threadid {0}",Thread.CurrentThread.ManagedThreadId);
         }
 
         static async Task DoSomethingAsync() //A Task return type will eventually yield a void
@@ -32,8 +33,10 @@ namespace AsyncAwait
         {
             using (var httpClient = new HttpClient())
             {
-                Console.WriteLine("3. Awaiting the result of GetStringAsync of Http Client...");
-                string result = await httpClient.GetStringAsync(URL); //execution pauses here while awaiting GetStringAsync to complete
+                Console.WriteLine("3. Awaiting the result of GetStringAsync of Http Client... threadid {0}", Thread.CurrentThread.ManagedThreadId);
+
+                //execution pauses here while awaiting GetStringAsync to complete
+                string result = await httpClient.GetStringAsync(URL); 
 
                 //From this line and below, the execution will resume once the above awaitable is done
                 //using await keyword, it will do the magic of unwrapping the Task<string> into string (result variable)

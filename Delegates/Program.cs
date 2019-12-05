@@ -34,7 +34,6 @@ namespace Delegates
         private static void SumAct(string text, int num1, int num2)
         {
             var sum = num1 + num2;
-            Console.WriteLine(text);
             Console.WriteLine(text + "\n...processing...");
             Thread.Sleep(500);
             Console.WriteLine("sum={0} processed on {1} thread",sum, Thread.CurrentThread.ManagedThreadId);
@@ -51,10 +50,10 @@ namespace Delegates
             act3("no invoke used", 22, 100);
 
             //Executes synchronously, on the same thread
-            act3.Invoke("act running synchronously",5, 3);
+            act3.Invoke("act running SYNChronously",5, 3);
 
             //Executes asynchronously, on a threadpool thread (a thread taken from threadpool)
-            act3.BeginInvoke("act running asynchronously",6, 5, ar =>
+            IAsyncResult result = act3.BeginInvoke("act running ASYNChronously",6, 5, ar =>
             {
                 Thread.Sleep(3000);
                 Console.WriteLine("completion callback received " + ar.IsCompleted);
@@ -62,7 +61,6 @@ namespace Delegates
 
             Console.WriteLine("Continue processing on main thread");
             Console.WriteLine("Main thread {0} is finished", Thread.CurrentThread.ManagedThreadId);
-            
             Console.ReadKey();
         }
     }
