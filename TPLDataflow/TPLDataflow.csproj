@@ -47,7 +47,6 @@
     <Compile Include="Data\ClientRespond.cs" />
     <Compile Include="DataflowManager.cs" />
     <Compile Include="DummyActionsGenerator.cs" />
-    <Compile Include="ICommunicationService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\ClientRequest.cs" />

@@ -18,13 +18,13 @@ namespace TPLDataflow
     public class Simulator
     {
         private static ICommunicationService _comService;
-        private DataflowManager _dfManager;
+        private DataflowManager pipeline;
 
         public Simulator()
         {
             //set event provider
             _comService = new DummyActionsGenerator();
-            _dfManager = new DataflowManager(_comService);
+            pipeline = new DataflowManager(_comService);
         }
 
         public void StartSimulator()
@@ -33,7 +33,7 @@ namespace TPLDataflow
             while (true)
             {
                 //simulate posting new requests to server dataflow
-                _dfManager.PostRequestsToBuffer();
+                pipeline.PostToPipeBuffer();
                 
                 var delay = rnd.Next(10, 1000);
                 Thread.Sleep(delay);

@@ -4,6 +4,12 @@ using TPLDataflow.Data;
 
 namespace TPLDataflow
 {
+    public interface ICommunicationService
+    {
+        bool SendRespond(ClientRespond p_respond);
+        List<ClientRequest> GetRequests();
+    }
+
     public class DummyActionsGenerator : ICommunicationService
     {
         private static List<ClientRequest> GetServerActions()

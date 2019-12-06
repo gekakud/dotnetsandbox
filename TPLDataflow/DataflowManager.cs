@@ -126,7 +126,7 @@ namespace TPLDataflow
             return results.ToList();        
         }
 
-        public void PostRequestsToBuffer()
+        public void PostToPipeBuffer()
         {
             var requests = _communicationService.GetRequests();
             if (requests!=null && requests.Any())
