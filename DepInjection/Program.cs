@@ -5,6 +5,7 @@ namespace DepInjection
 {
     internal class Program
     {
+        //bootstrapper with Autofac container
         private static void Main()
         {
             //Dependency injection (Simple way)

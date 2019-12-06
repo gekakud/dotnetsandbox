@@ -17,9 +17,13 @@ namespace Events
             DataProcessor dataProcessor = new DataProcessor();//publisher
             ProcessingStatusNotifier progressTracker = new ProcessingStatusNotifier();//subscriber
 
+            //progresstracker class subscribes to dataProcessor events
             dataProcessor.DataProcessingStarted += progressTracker.Started;
             dataProcessor.DataProcessingInProgress += progressTracker.InProgress;
             dataProcessor.DataProcessingFinished += progressTracker.Finished;
+            //subscribes with EventHandler
+            //notifies after more than 50% done
+            dataProcessor.HandleProgress += progressTracker.InProgress;
 
             dataProcessor.ProcessSomeData("some long text to process");
             Console.ReadKey();
@@ -43,6 +47,11 @@ namespace Events
         {
             Console.WriteLine("Current status: FINISHED");
         }
+
+        public void InProgress(object sender, int percentage)
+        {
+            Console.WriteLine("Almost done, {0}% remains", percentage);
+        }
     }
 
     internal class DataProcessor
@@ -50,10 +59,16 @@ namespace Events
         public delegate void ProcessingStarted();
         public delegate void ProcessingInProgress(int percentage);
         public delegate void ProcessingFinished();
-
+        
         public event ProcessingStarted DataProcessingStarted;
         public event ProcessingInProgress DataProcessingInProgress;
         public event ProcessingFinished DataProcessingFinished;
+
+        //The EventHandler<TEventArgs> delegate is a predefined delegate
+        //that represents an event handler method for an event that generates data.
+        //The advantage of using EventHandler<TEventArgs> is that you do not need to code
+        //your own custom delegate if your event generates event data.
+        public event EventHandler<int> HandleProgress;
 
         public async void ProcessSomeData(string text)
         {
@@ -70,6 +85,10 @@ namespace Events
                     DataProcessingInProgress(progress);
                     Thread.Sleep(300);
                     progress += 12;
+                    if (progress > 50)
+                    {
+                        HandleProgress(this, 100 - progress);
+                    }
                 }
 
                 DataProcessingInProgress(100);
