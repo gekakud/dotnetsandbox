@@ -30,6 +30,11 @@ namespace ThreadPoolBasics
             res = PrimesInRangeOnThreadPool(1, 400000);
             Thread.Sleep(2000);
 
+            //lets check how many thread in threadpool were allocated for this process
+            int i, j;
+            ThreadPool.GetMaxThreads(out i, out j);
+            Console.WriteLine("{0} and {1}", i,j);
+
             //Tasks
             res = PrimesInRangeWithTasks(1, 400000).Result;
             Console.WriteLine("Done");
