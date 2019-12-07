@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using GalaSoft.MvvmLight.CommandWpf;
@@ -9,22 +10,33 @@ namespace WpfTest
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        private readonly DataModel _personsDataModel;
-        private string _ageText;
+        private readonly DataModel _zonesDataModel;
+        private string _zoneZoom;
+        private string _zoneName;
+
+        private string _top;
+        private string _bottom;
+        private string _left;
+        private string _right;
 
         private string _loggerText;
-        private string _nameText;
 
         public MainWindowViewModel()
         {
-            _personsDataModel = DataModel.Instance;
-            _nameText = "";
-            _ageText = "";
+            _zonesDataModel = DataModel.Instance;
+            _zoneName = string.Empty;
+            _zoneZoom = string.Empty; 
+            _top = string.Empty; 
+            _bottom = string.Empty; 
+            _left = string.Empty;
+            _right = string.Empty;
 
             OnClear = new RelayCommand(OnClearInternal);
             OnCreate = new RelayCommand(OnCreateInternal);
+            OnListZones = new RelayCommand(OnListZonesInternal);
         }
 
+        #region View props
         public string LoggerText
         {
             get { return _loggerText; }
@@ -35,54 +47,114 @@ namespace WpfTest
             }
         }
 
-        public string AgeText
+        public string ZoneZoom
         {
-            get { return _ageText; }
+            get { return _zoneZoom; }
             set
             {
-                _ageText = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("AgeText"));
+                _zoneZoom = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("ZoneZoom"));
             }
         }
 
-        public string NameText
+        public string ZoneName
         {
-            get { return _nameText; }
+            get { return _zoneName; }
             set
             {
-                _nameText = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("NameText"));
+                _zoneName = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("ZoneName"));
             }
         }
+
+        public string TopText
+        {
+            get { return _top; }
+            set
+            {
+                _top = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("TopText"));
+            }
+        }
+
+        public string BottomText
+        {
+            get { return _bottom; }
+            set
+            {
+                _bottom = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("BottomText"));
+            }
+        }
+
+        public string LeftText
+        {
+            get { return _left; }
+            set
+            {
+                _left = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("LeftText"));
+            }
+        }
+
+        public string RightText
+        {
+            get { return _right; }
+            set
+            {
+                _right = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("RightText"));
+            }
+        }
+        #endregion
 
         public RelayCommand OnClear { get; private set; }
         public RelayCommand OnCreate { get; private set; }
+        public RelayCommand OnListZones { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        private void OnCreateInternal()
+        private async void OnCreateInternal()
         {
-            if (NameText.Length == 0 || AgeText.Length == 0)
+            if (ZoneName.Length == 0 || ZoneZoom.Length == 0)
             {
                 ShowStuff("Man, there are some empty fields!");
                 return;
             }
 
-            if (_personsDataModel.AddNewPerson(new Person {Age = AgeText, Name = NameText}) == StatusCheck.Ok)
+            int zoom = 0;
+            try
             {
-                LoggerText = _personsDataModel.GetUpdatedList();
-                return;
-            }
+                Extent extent = new Extent
+                {
+                    Bottom = Convert.ToDouble(BottomText),
+                    Top = Convert.ToDouble(TopText),
+                    Left = Convert.ToDouble(LeftText),
+                    Right = Convert.ToDouble(RightText),
+                };
 
-            ShowStuff("fdfnmgbvdfndfv");
+                if (await _zonesDataModel.AddNewZone(
+                        new Zone{ Zoom = Convert.ToInt32(ZoneZoom),
+                            Name = ZoneName,Extent = extent}) == StatusCheck.Ok)
+                {
+                    LoggerText = await _zonesDataModel.GetUpdatedList();
+                }
+            }
+            catch (Exception e)
+            {
+                ShowStuff(e.Message);
+            }
+        }
+
+        private async void OnListZonesInternal()
+        {
+            LoggerText = await _zonesDataModel.GetUpdatedList();
         }
 
         private void OnClearInternal()
         {
-            LoggerText = "";
-            NameText = "";
-            AgeText = "";
-            LoggerText = "";
+            ZoneZoom = string.Empty;
+            ZoneName = string.Empty;
         }
 
         [NotifyPropertyChangedInvocator]
