@@ -4,9 +4,16 @@ namespace CommonUtilsLibrary
 {
     public class CommonUtils
     {
-        public static void PrintGreeting()
+        public CommonUtils()
         {
-            Console.WriteLine("Hello human!");
+            PrivateInteger = 50;
+        }
+
+        private int PrivateInteger { get; set; }
+
+        public void PrintGreeting()
+        {
+            Console.WriteLine("Hello, I have {0} bucks", PrivateInteger);
         }
     }
 

@@ -20,10 +20,17 @@ namespace ReflectionSimple
 
             IList<Type> listOfTypes = assembly.GetExportedTypes().ToList();
             var m = myType.GetMethod("PrintGreeting");
-            m.Invoke(null, null);
+            PropertyInfo n = myType.GetProperty("PrivateInteger",BindingFlags.NonPublic | BindingFlags.Instance);
 
-            var instance = Activator.CreateInstance(myType);
 
+            var classInstance = Activator.CreateInstance(myType);
+            m.Invoke(classInstance, null);
+
+            var accessor = n.GetAccessors(true);
+            object[] parametersArray = new object[] { 0 };
+            accessor[1].Invoke(classInstance, parametersArray);
+
+            m.Invoke(classInstance, null);
             Console.ReadKey();
         }
     }

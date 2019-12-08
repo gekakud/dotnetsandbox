@@ -11,7 +11,7 @@ namespace WpfTest
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         private readonly DataModel _zonesDataModel;
-        private string _zoneZoom;
+
         private string _zoneName;
 
         private string _top;
@@ -25,7 +25,6 @@ namespace WpfTest
         {
             _zonesDataModel = DataModel.Instance;
             _zoneName = string.Empty;
-            _zoneZoom = string.Empty; 
             _top = string.Empty; 
             _bottom = string.Empty; 
             _left = string.Empty;
@@ -44,16 +43,6 @@ namespace WpfTest
             {
                 _loggerText = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("LoggerText"));
-            }
-        }
-
-        public string ZoneZoom
-        {
-            get { return _zoneZoom; }
-            set
-            {
-                _zoneZoom = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("ZoneZoom"));
             }
         }
 
@@ -116,9 +105,9 @@ namespace WpfTest
 
         private async void OnCreateInternal()
         {
-            if (ZoneName.Length == 0 || ZoneZoom.Length == 0)
+            if (ZoneName.Length == 0)
             {
-                ShowStuff("Man, there are some empty fields!");
+                ShowStuff("There are some empty fields!");
                 return;
             }
 
@@ -133,17 +122,33 @@ namespace WpfTest
                     Right = Convert.ToDouble(RightText),
                 };
 
-                if (await _zonesDataModel.AddNewZone(
-                        new Zone{ Zoom = Convert.ToInt32(ZoneZoom),
-                            Name = ZoneName,Extent = extent}) == StatusCheck.Ok)
+                var res = await _zonesDataModel.AddNewZone(
+                    new Zone
+                    {
+                        Zoom = 20,
+                        Name = ZoneName,
+                        Extent = extent
+                    });
+
+                if (res == "OK")
                 {
                     LoggerText = await _zonesDataModel.GetUpdatedList();
                 }
+                else
+                {
+                    ShowStuff(res);
+                }
+
             }
             catch (Exception e)
             {
                 ShowStuff(e.Message);
             }
+        }
+
+        private async void OnDownloadZip()
+        {
+            
         }
 
         private async void OnListZonesInternal()
@@ -153,7 +158,6 @@ namespace WpfTest
 
         private void OnClearInternal()
         {
-            ZoneZoom = string.Empty;
             ZoneName = string.Empty;
         }
 

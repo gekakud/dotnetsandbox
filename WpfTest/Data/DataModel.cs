@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -19,6 +23,9 @@ namespace WpfTest.Data
         private const string allZones = "/zones/allzones";
         private const string createZone = "/zones/create";
 
+        private const string getHeights = "/getheights";
+        private const string getMap = "/getmap";
+
         private static DataModel s_instance;
         private ZonesData _zonesData;
 
@@ -33,7 +40,7 @@ namespace WpfTest.Data
         }
 
 
-        public async Task<StatusCheck> AddNewZone(Zone p)
+        public async Task<string> AddNewZone(Zone p)
         {
             _zonesData.AllZones.Add(p);
 
@@ -48,11 +55,11 @@ namespace WpfTest.Data
                 }
                 catch (Exception ex)
                 {
-                    var t = ex.Message;
+                    return ex.Message;
                 }
             }
 
-            return StatusCheck.Ok;
+            return "OK";
         }
 
         private async Task FetchAllZones()
@@ -70,6 +77,95 @@ namespace WpfTest.Data
                     
                 }
             }
+
+        }
+
+        public async Task<string> FetchZoneZipped(string zoneName = "Canillo")
+        {
+            if (_zonesData.AllZones.Exists(z => z.Name == zoneName))
+            {
+                
+
+                var infoFile = "info.json";
+                var heightsFile = "heights.json";
+                var mapdata = "mapdata.json";
+
+                var zoneDirName = zoneName;
+
+                var allFilesDir = Path.Combine(Directory.GetCurrentDirectory(), zoneDirName);
+                if (!Directory.Exists(allFilesDir))
+                {
+                    Directory.CreateDirectory(allFilesDir);
+                }
+
+                System.IO.DirectoryInfo di = new DirectoryInfo(allFilesDir);
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    file.Delete();
+                }
+
+                var zone =_zonesData.AllZones.First(z => z.Name == zoneName);
+                // Write the string array to a new file
+                // INFO
+                using (StreamWriter outputFile = new StreamWriter(Path.Combine(allFilesDir, infoFile)))
+                {
+                    var zoneToFetchJson = JsonConvert.SerializeObject(zone);
+                    outputFile.Write(zoneToFetchJson);
+                }
+
+                // Write the string array to a new file
+                //HEIGHTS
+                using (StreamWriter outputFile = new StreamWriter(Path.Combine(allFilesDir, heightsFile)))
+                {
+                    using (var wc = new WebClient())
+                    {
+                        try
+                        {
+                            wc.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+                            //Uri uri = new Uri(URL + getHeights + $"/{zone.Id}");
+                            //var json = await wc.DownloadStringTaskAsync(uri);
+                            Uri uri = new Uri(URL + getHeights + "/" + zone.Id.ToString());
+                            var json = await wc.DownloadStringTaskAsync(uri);
+                            outputFile.Write(json);
+                        }
+                        catch (Exception ex)
+                        {
+                            var t = 5;
+                        }
+                    }
+                }
+
+                
+                // Write the string array to a new file
+                //MAPDATA
+                using (StreamWriter outputFile = new StreamWriter(Path.Combine(allFilesDir, mapdata)))
+                {
+                    using (var wc = new WebClient())
+                    {
+                        try
+                        {
+                            wc.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+                            Uri uri = new Uri(URL + getMap + "/" + zone.Id);
+                            var json = await wc.DownloadStringTaskAsync(uri);
+                            outputFile.Write(json);
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+                }
+
+
+            }
+            else
+            {
+                return "No such zone";
+            }
+
+            
+
+            return "";
         }
 
         public async Task<string> GetUpdatedList()
@@ -114,6 +210,8 @@ namespace WpfTest.Data
         public string State { get; set; }
         public string StateCode { get; set; }
         public int Zoom { get; set; }
+        public Guid Id { get; set; }
+
     }
 
     public class Extent
