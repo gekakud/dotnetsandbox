@@ -40,9 +40,9 @@ namespace WpfTest.Data
         }
 
 
-        public async Task<string> AddNewZone(Zone p)
+        public async Task<string> AddNewZone(SkiResortInfo p)
         {
-            _zonesData.AllZones.Add(p);
+            
 
             using (var wc = new WebClient())
             {
@@ -50,8 +50,8 @@ namespace WpfTest.Data
                 {
                     wc.Headers.Add(HttpRequestHeader.ContentType, "application/json");
                     Uri uri = new Uri(URL + createZone);
-                    var bodyData = JsonConvert.SerializeObject(p.Extent);
-                    var json = wc.UploadStringTaskAsync(uri + "/" + p.Name, "POST", bodyData);
+                    var bodyData = JsonConvert.SerializeObject(p);
+                    var json = wc.UploadStringTaskAsync(uri, "POST", bodyData);
                 }
                 catch (Exception ex)
                 {
@@ -177,10 +177,9 @@ namespace WpfTest.Data
             }
 
             StringBuilder zonesList = new StringBuilder();
-            foreach (var zone in _zonesData.AllZones)
+            foreach (var zone in _zonesData.AllZones.OrderBy(z => z.Name).ToList())
             {
-                zonesList.Append("Name:"+zone.Name+", Zoom:");
-                zonesList.AppendLine(zone.Zoom.ToString());
+                zonesList.Append("Name: " + zone.Name + "\n");
             }
             return zonesList.ToString();
         }
@@ -212,6 +211,12 @@ namespace WpfTest.Data
         public int Zoom { get; set; }
         public Guid Id { get; set; }
 
+    }
+
+    public class SkiResortInfo
+    {
+        public Extent ResortExtent { get; set; }
+        public string ResortFullName { get; set; }
     }
 
     public class Extent

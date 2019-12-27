@@ -122,17 +122,20 @@ namespace WpfTest
                     Right = Convert.ToDouble(RightText),
                 };
 
-                var res = await _zonesDataModel.AddNewZone(
-                    new Zone
-                    {
-                        Zoom = 20,
-                        Name = ZoneName,
-                        Extent = extent
-                    });
+                SkiResortInfo info = new SkiResortInfo
+                {
+                    ResortExtent = extent,
+                    ResortFullName = ZoneName
+                };
+
+                
+
+                var res = await _zonesDataModel.AddNewZone(info);
 
                 if (res == "OK")
                 {
                     LoggerText = await _zonesDataModel.GetUpdatedList();
+                    OnClearInternal();
                 }
                 else
                 {
@@ -159,6 +162,10 @@ namespace WpfTest
         private void OnClearInternal()
         {
             ZoneName = string.Empty;
+            TopText = string.Empty;
+            BottomText = string.Empty;
+            LeftText = string.Empty;
+            RightText = string.Empty;
         }
 
         [NotifyPropertyChangedInvocator]
