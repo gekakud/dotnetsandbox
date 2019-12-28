@@ -38,7 +38,7 @@ namespace ArdalisRating
     {
         public decimal Rating { get; set; }
 
-        //there were too many responsibilities for RatingEngine: logging, persistence and encoding format
+        // SRP - there were too many responsibilities for RatingEngine: logging, persistence and encoding format
         //so we move this responsibilities to a separate classes
         ConsoleLogger ConsoleLogger = new ConsoleLogger();
         PolicySource PolicySource = new PolicySource();

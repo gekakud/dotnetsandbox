@@ -42,10 +42,6 @@ namespace ArdalisRating_OpenClosed
         PolicySource PolicySource = new PolicySource();
         PolicySerializer PolicySerializer = new PolicySerializer();
 
-
-        //OCP - now rate method is open for extension of different types of policies
-        //and closed for modifications - we do not need to change this method in order to add support
-        //for new policy types
         public void Rate()
         {
             ConsoleLogger.Log("Starting rate.");
@@ -56,11 +52,17 @@ namespace ArdalisRating_OpenClosed
 
             var policy = PolicySerializer.GetPolicyFromJsonString(policyJson);
 
-            //OCP - imagine we want add another rater for another policy type
-            //we should move all logic to separate classes with abstraction of common methods and props
-            //also it will make the logic of rating more testable and easy to extent
             var rater = RaterFactory.CreateRater(policy, this);
-            rater?.Rate(policy);
+
+            // LSP - detecting LSP violations in code:
+            // type checking with IS or AS in polymorphic code
+            // Null check
+            // NotImplementedExceptions
+
+            //rater?.Rate(policy);
+            //we can use C# feature to check for Nulls or ensure we do not return null from Factory
+            //Null object pattern is also an option
+            rater.Rate(policy);
 
             ConsoleLogger.Log("Rating completed.");
         }
