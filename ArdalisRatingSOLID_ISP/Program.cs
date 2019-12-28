@@ -11,6 +11,11 @@ namespace ArdalisRating_OpenClosed
         {
             Console.WriteLine("Ardalis Insurance Rating System Starting...");
 
+            // ISP:
+            // clients should not be forced to depend on methods they do not use
+            // we must prefer small interfaces to large
+            // ISP helps with SRP and LSP
+
             var concreteRaterContext = new DefaultJsonPolicyContext(new ConsoleLogger(), new JsonPolicyReader());
             var engine = new RatingEngine(concreteRaterContext);
             engine.Rate();
