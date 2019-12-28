@@ -44,6 +44,10 @@ namespace ArdalisRating_OpenClosed
         PolicySource PolicySource = new PolicySource();
         PolicySerializer PolicySerializer = new PolicySerializer();
 
+
+        //now rate method is open for extension of different types of policies
+        //and closed for modifications - we do not need to change this method in order to add support
+        //for new policy types
         public void Rate()
         {
             ConsoleLogger.Log("Starting rate.");

@@ -15,10 +15,10 @@
                 case PolicyType.Life:
                     return new LifePolicyRater(engine, engine.ConsoleLogger);
 
+                default:
+                    return new UnknownPolicyRater(engine,engine.ConsoleLogger);
 
             }
-
-            return null;
         }
     }
 }
