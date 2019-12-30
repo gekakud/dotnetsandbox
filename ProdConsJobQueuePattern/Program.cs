@@ -8,17 +8,23 @@ namespace ProdConsJobQueuePattern
         static void Main(string[] args)
         {
             var clientsProcessor = new QueueProcessor(5);
-
-            //adding new person(supermarket client) to a queue each second
-            var simpleDataStream = Observable.Interval(TimeSpan.FromSeconds(1)).Subscribe(x =>
+            IDisposable simpleDataStream = null;
+            try
             {
-                Console.WriteLine("Client {0} joined the queue", x);
-                clientsProcessor.AddClientToQueue((int)x);
-            });
+                //adding new person(supermarket client) to a queue each second
+                simpleDataStream = Observable.Interval(TimeSpan.FromSeconds(1)).Subscribe(x =>
+                {
+                    Console.WriteLine("Client {0} joined the queue", x);
+                    clientsProcessor.AddClientToQueue((int)x);
+                });
 
-            Console.ReadKey();
-            simpleDataStream.Dispose();
-            clientsProcessor.Dispose();
+                Console.ReadKey();
+            }
+            finally
+            {
+                simpleDataStream?.Dispose();
+                clientsProcessor.Dispose();
+            }
         }
     }
 }

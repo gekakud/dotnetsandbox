@@ -33,7 +33,7 @@ namespace ThreadPoolBasics
             //lets check how many thread in threadpool were allocated for this process
             int i, j;
             ThreadPool.GetMaxThreads(out i, out j);
-            Console.WriteLine("{0} and {1}", i,j);
+            Console.WriteLine("Num of worker threads in current process thread pool: {0} and {1}", i,j);
 
             //Tasks
             res = PrimesInRangeWithTasks(1, 400000).Result;

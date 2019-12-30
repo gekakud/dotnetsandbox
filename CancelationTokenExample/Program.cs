@@ -20,7 +20,7 @@ namespace CancelationTokenExample
                 cts.Cancel();
                 t1.Wait();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 if (t1.IsCanceled)
                 {
