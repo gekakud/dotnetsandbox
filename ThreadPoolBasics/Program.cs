@@ -57,7 +57,7 @@ namespace ThreadPoolBasics
             return primes;
         }
 
-        //creating multiple threads to plit the work
+        //creating multiple threads to split the work
         public static IEnumerable<uint> PrimesInRangeByChunks(uint start, uint end)
         {
             List<uint> primes = new List<uint>();
