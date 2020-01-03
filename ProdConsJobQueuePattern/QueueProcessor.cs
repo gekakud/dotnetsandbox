@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 namespace ProdConsJobQueuePattern
 {
     /// <summary>
-    /// Managing cashier threads and thread-safe queue
+    /// Managing worker threads and thread-safe queue with blocking collection
     /// </summary>
-    public class QueueProcessor : IDisposable
+    public class QueueProcessor
     {
         //using BlockingCollection to avoid polling
         private readonly BlockingCollection<int>
@@ -25,7 +25,7 @@ namespace ProdConsJobQueuePattern
             }
         }
 
-        public void AddClientToQueue(int job)
+        public void AddToQueue(int job)
         {
             _clientsQueue.Add(job);
         }
