@@ -11,9 +11,13 @@ namespace LinkedList
             list.AddToEnd(new Node(2));
             list.AddToEnd(new Node(3));
             list.AddToEnd(new Node(4));
-
+            list.AddToEnd(new Node(5));
+            list.AddToEnd(new Node(6));
             list.AddToStart(new Node(0));
 
+            list.RemoveOdds();
+
+            list.ReverseList();
             list.PrintList();
 
             Console.ReadKey();
@@ -24,9 +28,39 @@ namespace LinkedList
     {
         private Node _head;
 
-        public void InsertAfter(Node node)
+        public void ReverseList()
         {
-            throw new NotImplementedException();
+            Node curNode, nextNode, prevNode;
+
+            nextNode = null;
+            curNode = _head;
+            prevNode = null;
+
+            while (curNode!=null)
+            {
+                nextNode = curNode.NextNode;
+                curNode.NextNode = prevNode;
+                prevNode = curNode;
+                curNode = nextNode;
+            }
+
+            _head = prevNode;
+        }
+
+        public void RemoveOdds()
+        {
+            Node cur = _head;
+            Node nextToAppend = cur.NextNode.NextNode;
+
+            while (nextToAppend.NextNode!=null)
+            {
+               
+                cur.NextNode = nextToAppend;
+                cur = cur.NextNode;
+                nextToAppend = nextToAppend.NextNode.NextNode;
+            }
+
+            cur.NextNode = nextToAppend;
         }
 
         public void AddToStart(Node newNode)
@@ -83,27 +117,10 @@ namespace LinkedList
 
     interface ILinkedList
     {
-        void InsertAfter(Node node);
+        void ReverseList();
+        void RemoveOdds();
         void AddToStart(Node node);
         void AddToEnd(Node node);
         void PrintList();
-    }
-
-    class Node
-    {
-        public Node NextNode;
-
-        private int Data;
-
-        public Node(int newData)
-        {
-            Data = newData;
-            NextNode = null;
-        }
-
-        public int GetValue()
-        {
-            return Data;
-        }
     }
 }
