@@ -9,6 +9,10 @@ namespace ThreadAndTaskTutorial
         static void Main()
         {
             StartJobs(NumOfJobs);
+
+            DeadlockExample de = new DeadlockExample();
+
+            de.SimulateDeadlock();
         }
 
         public static void StartJobs(int p_numOfJobs)
@@ -22,6 +26,7 @@ namespace ThreadAndTaskTutorial
             teExecutor.StartJobs();
 
             teExecutor.ShowResults();
+
             Console.ReadKey();
         }
         
