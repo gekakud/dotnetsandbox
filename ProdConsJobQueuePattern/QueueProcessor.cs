@@ -36,17 +36,31 @@ namespace ProdConsJobQueuePattern
 
             while (true)
             {
-                //blocking thread until there is new client to process
-                var currentClienId = _clientsQueue.Take();
-                var processingDelay = rn.Next(1, 5);
+                // BlockingCollection throws if no more items are expected(CompleteAdding() was called)
+                try
+                {
+                    //blocking thread until there is new client to process
+                    var currentClienId = _clientsQueue.Take();
+                    var processingDelay = rn.Next(1, 5);
 
-                //processing...
-                await Task.Delay(processingDelay * 1000);
+                    //processing...
+                    await Task.Delay(processingDelay * 1000);
 
-                Console.WriteLine("Cashier {0} finished processing client {1} within {2} seconds"
-                    , Thread.CurrentThread.ManagedThreadId
-                    , currentClienId, processingDelay);
+                    Console.WriteLine("Cashier {0} finished processing client {1} within {2} seconds"
+                        , Thread.CurrentThread.ManagedThreadId
+                        , currentClienId, processingDelay);
+                }
+                catch (InvalidOperationException e)
+                {
+                    Console.WriteLine(e.Message);
+                    return;
+                }
             }
+        }
+
+        public void StopPostingJobs()
+        {
+            _clientsQueue?.CompleteAdding();
         }
 
         public void Dispose()
