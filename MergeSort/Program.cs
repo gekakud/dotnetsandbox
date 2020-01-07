@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace MergeSort
 {
@@ -10,77 +9,58 @@ namespace MergeSort
         {
             List<int> unsorted = new List<int> { 33, 12, 86, 8, 10, 55, 69, 1, 113 };
             MergeSort mergeSort = new MergeSort();
-
             var sorted = mergeSort.Sort(unsorted);
-
             foreach (var i in sorted)
             {
                 Console.WriteLine(i);
             }
 
+            int[] data = { 17, 20, 11, 8, 0, 1, 14, 9, 9, 15, 5, 12, 8, 11, 16, 11, 11, 9, 16, 18 };
+            QuickSort.Sort(data, 0, data.Length-1);
+
             Console.ReadKey();
         }
     }
 
-    public class MergeSort
+    class QuickSort
     {
-        public List<int> Sort(List<int> unsortedArray)
+        static int Partition(int[] array, int low, int high)
         {
+            //1. Select a pivot point.
+            int pivot = array[high];
 
-            if (unsortedArray.Count == 1)
+            int lowIndex = (low - 1);
+
+            //2. Reorder the collection.
+            for (int j = low; j < high; j++)
             {
-                return unsortedArray;
+                if (array[j] <= pivot)
+                {
+                    lowIndex++;
+
+                    int temp = array[lowIndex];
+                    array[lowIndex] = array[j];
+                    array[j] = temp;
+                }
             }
 
-            int mid = unsortedArray.Count / 2;
-            var left = unsortedArray.GetRange(0, mid);
-            var right = unsortedArray.GetRange(mid, unsortedArray.Count - mid);
+            int temp1 = array[lowIndex + 1];
+            array[lowIndex + 1] = array[high];
+            array[high] = temp1;
 
-            left = Sort(left);
-            right = Sort(right);
-
-            return MergeLeftAndRight(left, right);
+            return lowIndex + 1;
         }
 
-        public List<int> MergeLeftAndRight(List<int> left, List<int> right)
+        public static void Sort(int[] array, int low, int high)
         {
-            var merged = new List<int>();
-
-            
-            while (left.Any() || right.Any())
+            if (low < high)
             {
-                //there are elements in both
-                if (left.Any() && right.Any())
-                {
-                    if (left.First() <= right.First())
-                    {
-                        merged.Add(left.First());
-                        left.RemoveAt(0);
-                    }
-                    else
-                    {
-                        merged.Add(right.First());
-                        right.RemoveAt(0);
-                    }
-                }
-                else
-                {
-                    if (left.Any())
-                    {
-                        merged.AddRange(left);
-                        left.Clear();
-                    }
+                int partitionIndex = Partition(array, low, high);
 
-                    if (right.Any())
-                    {
-                        merged.AddRange(right);
-                        right.Clear();
-                    }
-                }
+                //3. Recursively continue sorting the array
+                Sort(array, low, partitionIndex - 1);
+                Sort(array, partitionIndex + 1, high);
             }
-
-            return merged;
         }
     }
-
 }
