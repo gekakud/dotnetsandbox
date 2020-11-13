@@ -2,11 +2,11 @@ namespace DepInjection
 {
     public class RetreiveData
     {
-        public RetreiveData(IData p_data)
+        public RetreiveData(IDataActions pDataActions)
         {
-            var data = p_data;
-            data.SaveData("dummy data");
-            data.GetData();
+            IDataActions dataActions = pDataActions;
+            dataActions.SaveData("dummy data");
+            dataActions.GetData();
         }
     }
 }

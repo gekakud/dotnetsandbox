@@ -1,5 +1,6 @@
 ﻿using System;
 using Autofac;
+using DepInjection.DataProvider;
 
 namespace DepInjection
 {
@@ -9,14 +10,15 @@ namespace DepInjection
         private static void Main()
         {
             //Dependency injection (Simple way)
-            var resolver = new Resolver();
+            var resolver = new RandomResolver();
             var d1 = new RetreiveData(resolver.ResolveProvider());
             var d2 = new RetreiveData(resolver.ResolveProvider());
 
             //Dependency injection with IOC container
-            var iocContainer = new BootStrapper().Bootstrap();
+            IContainer iocContainer = new BootStrapper().Bootstrap();
 
-            var textIndexer = iocContainer.Resolve<InTextIndexer>();
+            //InTextIndexer will be created while its ctor will receive appropriate(registered) ICacheService instance
+            InTextIndexer textIndexer = iocContainer.Resolve<InTextIndexer>();
             textIndexer.WhichCacheDoIuse();
 
             Console.ReadKey();

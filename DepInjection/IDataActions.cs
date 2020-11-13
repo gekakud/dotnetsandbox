@@ -1,6 +1,6 @@
 ﻿namespace DepInjection
 {
-    public interface IData
+    public interface IDataActions
     {
         object GetData();
         bool SaveData(string p_data);

@@ -2,9 +2,9 @@
 {
     public class DataProviderCommon
     {
-        public string GetDataProviderType(IData p_data)
+        public string GetDataProviderType(IDataActions pDataActions)
         {
-            return p_data.GetType().Name;
+            return pDataActions.GetType().Name;
         }
     }
 }

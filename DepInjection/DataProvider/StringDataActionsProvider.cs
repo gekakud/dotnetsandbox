@@ -2,7 +2,7 @@
 
 namespace DepInjection.DataProvider
 {
-    public class StringDataProvider : DataProviderCommon, IData
+    public class StringDataActionsProvider : DataProviderCommon, IDataActions
     {
         public object GetData()
         {

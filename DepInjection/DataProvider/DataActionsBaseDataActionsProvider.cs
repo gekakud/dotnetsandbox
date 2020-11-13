@@ -2,7 +2,7 @@ using System;
 
 namespace DepInjection.DataProvider
 {
-    public class DataBaseDataProvider : DataProviderCommon, IData
+    public class DataActionsBaseDataActionsProvider : DataProviderCommon, IDataActions
     {
         public object GetData()
         {
