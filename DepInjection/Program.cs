@@ -77,7 +77,7 @@ namespace DepInjection
         }
     }
 
-    internal class AppFabricCache:ICacheService
+    internal class AppFabricCache : ICacheService
     {
         public bool SetString(string p_ent)
         {
