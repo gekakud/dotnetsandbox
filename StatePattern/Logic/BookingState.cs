@@ -2,9 +2,9 @@
 {
     public abstract class BookingState
     {
-        public abstract void EnterState(BookingContext bookingCtx);
-        public abstract void Cancel(BookingContext bookingCtx);
-        public abstract void DatePassed(BookingContext bookingCtx);
-        public abstract void EnterDetails(BookingContext bookingCtx, string attendee, int ticketCount);
+        public abstract void EnterState(StateMachine bookingCtx);
+        public abstract void Cancel(StateMachine bookingCtx);
+        public abstract void DatePassed(StateMachine bookingCtx);
+        public abstract void EnterDetails(StateMachine bookingCtx, string attendee, int ticketCount);
     }
 }

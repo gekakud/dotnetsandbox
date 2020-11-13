@@ -8,23 +8,23 @@
             _reasonClosed = reason;
         }
 
-        public override void EnterState(BookingContext bookingCtx)
+        public override void EnterState(StateMachine bookingCtx)
         {
             bookingCtx.ShowState("Closed");
             bookingCtx.View.ShowStatus(_reasonClosed);
         }
 
-        public override void Cancel(BookingContext bookingCtx)
+        public override void Cancel(StateMachine bookingCtx)
         {
             bookingCtx.View.ShowError("Invalid action for this state");
         }
 
-        public override void DatePassed(BookingContext bookingCtx)
+        public override void DatePassed(StateMachine bookingCtx)
         {
             bookingCtx.View.ShowError("Invalid action for this state");
         }
 
-        public override void EnterDetails(BookingContext bookingCtx, string attendee, int ticketCount)
+        public override void EnterDetails(StateMachine bookingCtx, string attendee, int ticketCount)
         {
             bookingCtx.View.ShowError("Invalid action for this state");
         }

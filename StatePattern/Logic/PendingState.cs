@@ -8,7 +8,7 @@ namespace StatePattern.Logic
     {
         private CancellationTokenSource cancellationToken;
 
-        public override void EnterState(BookingContext bookingCtx)
+        public override void EnterState(StateMachine bookingCtx)
         {
             cancellationToken = new CancellationTokenSource();
 
@@ -18,7 +18,7 @@ namespace StatePattern.Logic
             StaticFunctions.ProcessBooking(bookingCtx, BookingProcessResultCallback, cancellationToken.Token);
         }
 
-        private void BookingProcessResultCallback(BookingContext booking, ProcessingResult result)
+        private void BookingProcessResultCallback(StateMachine booking, ProcessingResult result)
         {
             switch (result)
             {
@@ -37,16 +37,16 @@ namespace StatePattern.Logic
             }
         }
 
-        public override void Cancel(BookingContext bookingCtx)
+        public override void Cancel(StateMachine bookingCtx)
         {
             cancellationToken.Cancel();
         }
 
-        public override void DatePassed(BookingContext bookingCtx)
+        public override void DatePassed(StateMachine bookingCtx)
         {
         }
 
-        public override void EnterDetails(BookingContext bookingCtx, string attendee, int ticketCount)
+        public override void EnterDetails(StateMachine bookingCtx, string attendee, int ticketCount)
         {
         }
     }
@@ -55,8 +55,8 @@ namespace StatePattern.Logic
 
     public class StaticFunctions
     {
-        public static async void ProcessBooking(BookingContext booking,
-            Action<BookingContext, ProcessingResult> callback, CancellationToken cancellation)
+        public static async void ProcessBooking(StateMachine booking,
+            Action<StateMachine, ProcessingResult> callback, CancellationToken cancellation)
         {
             try
             {

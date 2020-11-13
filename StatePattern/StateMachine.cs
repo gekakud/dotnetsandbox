@@ -2,7 +2,7 @@
 
 namespace StatePattern
 {
-    public class BookingContext
+    public class StateMachine
     {
         public ConsoleUi View { get; set; }
         public int BookingId { get; set; }
@@ -11,7 +11,7 @@ namespace StatePattern
 
         private BookingState currentState;
 
-        public BookingContext(ConsoleUi view)
+        public StateMachine(ConsoleUi view)
         {
             View = view;
         }

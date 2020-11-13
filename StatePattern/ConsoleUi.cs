@@ -9,12 +9,12 @@ namespace StatePattern
         private string TicketCountText { get; set; }
         private string StateNameText { get; set; }
 
-        private BookingContext booking;
+        private StateMachine bookingStateMachine;
 
         public ConsoleUi()
         {
-            booking = new BookingContext(this);
-            booking.InitFirstBooking();
+            bookingStateMachine = new StateMachine(this);
+            bookingStateMachine.InitFirstBooking();
         }
 
         public void PrintToConsole(string stateName, string attendee, int ticketCount)
@@ -37,7 +37,7 @@ namespace StatePattern
 
             TicketCountText = Console.ReadLine();
 
-            booking.SubmitDetails(AttendeeText, Int32.Parse(TicketCountText));
+            bookingStateMachine.SubmitDetails(AttendeeText, Int32.Parse(TicketCountText));
         }
 
         public void ShowStatus(string status)
