@@ -21,11 +21,11 @@ namespace ParallelExample
             //we can use task parallelism by calling the invoke method of Parallel class. 
             //Parallel.Invoke method accepts an array of Action delegate
             Parallel.Invoke(options, MyTask, MyTask, MyTask);
-            //Main Task is waiting all methods passed to Invoke are completed
+            //Main Task is waiting for all methods passed to Invoke until completed
 
 
             // 2 - Data Parallelism: If we have a big collection of data and 
-            //we want some operation on each of the data to perform parallely then we can use data parallelism.
+            //we want some operation on each of the data to perform in parallel, then we can use data parallelism.
             //Parallel class has static For or ForEach method to perform data parallelism
             ParallelLoopResult result =
                 Parallel.For(0, 100, async (int i) =>

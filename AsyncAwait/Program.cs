@@ -49,7 +49,7 @@ namespace AsyncAwait
         static void DoSynchronousWorkAfterAwait()
         {
             //This is the work we can do while waiting for the awaited Async Task to complete
-            Console.WriteLine("7. While waiting for the async task to finish, we can do some unrelated work...");
+            Console.WriteLine("7. While waiting for the async task to finish, we can do some unrelated work. threadid {0}", Thread.CurrentThread.ManagedThreadId);
             for (var i = 0; i <= 5; i++)
             {
                 for (var j = i; j <= 5; j++)
@@ -58,7 +58,6 @@ namespace AsyncAwait
                 }
                 Console.WriteLine();
             }
-
         }
     }
 }
