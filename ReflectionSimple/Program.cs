@@ -12,7 +12,7 @@ namespace ReflectionSimple
         {
             Directory.SetCurrentDirectory(@"..\..\..\");
             var path1 = Directory.GetCurrentDirectory();
-            var path2 = @"CommonUtilsLibrary\bin\Debug\CommonUtilsLibrary.dll";
+            var path2 = @"bin\Debug\CommonUtilsLibrary.dll";
             var path3 = Path.Combine(path1, path2);
             var assembly =
                 Assembly.LoadFile(path3);
