@@ -1,15 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Reflection;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -77,50 +74,9 @@ namespace InfraUtils
             return sb.ToString();
         }
 
-        public static bool BinaryEquals<T>(T obj1, T obj2) where T : class
-        {
-            return SerializeToByteArray(obj1).EqualLists(SerializeToByteArray(obj2));
-        }
-
-        public static int BinaryGetHashCode<T>(T obj) where T : class
-        {
-            if (obj == null)
-            {
-                return 0;
-            }
-
-            //for strings: string.GetHashCode() is 100 times faster than SerializeToByteArray(obj)
-            return (obj as string)?.GetHashCode() ?? EnumerableGetHashCode(SerializeToByteArray(obj));
-        }
-
         public static int BinaryGetHashCode(string str)
         {
             return str?.GetHashCode() ?? 0;
-        }
-
-        public static byte[] SerializeToByteArray<T>(T obj) where T : class
-        {
-            if (obj == null)
-                return null;
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                BinaryFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(ms, obj);
-                return ms.ToArray();
-            }
-        }
-
-        public static T DeserializeFromByteArray<T>(byte[] arr) where T : class
-        {
-            if (arr == null)
-                return default(T);
-
-            using (var stream = new MemoryStream(arr))
-            {
-                var formatter = new BinaryFormatter();
-                return (T)formatter.Deserialize(stream);
-            }
         }
 
         public static string SerializeToBase64String<T>(T obj, Func<T, byte[]> serializer) where T : class
@@ -133,20 +89,6 @@ namespace InfraUtils
                 return string.Empty;
 
             return Convert.ToBase64String(arr);
-        }
-
-        public static string SerializeToBase64String<T>(T obj) where T : class
-        {
-            return SerializeToBase64String(obj, SerializeToByteArray);
-        }
-
-        public static T DeserializeFromBase64String<T>(string s) where T : class
-        {
-            if (string.IsNullOrEmpty(s))
-                return default(T);
-
-            byte[] arr = Convert.FromBase64String(s);
-            return DeserializeFromByteArray<T>(arr);
         }
 
         public static void WaitUntil(Func<bool> condition, string description, int timeoutInMinutes, int intervalInSeconds)
